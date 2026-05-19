@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "skills": {
+    "accessibility": {
+      "source": "addyosmani/web-quality-skills",
+      "sourceType": "github",
+      "skillPath": "skills/accessibility/SKILL.md",
+      "computedHash": "494d59fffe67c87b485f4ee2fb1abd73fc9d0d508c4c8bd9c43a9edd3242f730"
+    },
+    "best-practices": {
+      "source": "addyosmani/web-quality-skills",
+      "sourceType": "github",
+      "skillPath": "skills/best-practices/SKILL.md",
+      "computedHash": "f5d58f0adf9cc9646b35daf2241377e1ad7b8ab094e54c9792a826af1e0dca5b"
+    },
+    "core-web-vitals": {
+      "source": "addyosmani/web-quality-skills",
+      "sourceType": "github",
+      "skillPath": "skills/core-web-vitals/SKILL.md",
+      "computedHash": "466ba01941037ddc0b519273035eae1e1f591019bdeb0fd83cd8786c53a07f89"
+    },
+    "performance": {
+      "source": "addyosmani/web-quality-skills",
+      "sourceType": "github",
+      "skillPath": "skills/performance/SKILL.md",
+      "computedHash": "9e0e29b7919bacfd2d0caae0f841fa53ae3d7b7427d27f4fdbacc76643d7d138"
+    },
+    "pnpm": {
+      "source": "antfu/skills",
+      "sourceType": "github",
+      "skillPath": "skills/pnpm/SKILL.md",
+      "computedHash": "d473204df25defd08a7d47b55c6d124b41ebde440b774995952b65223d0d8d6f"
+    },
+    "react-aria": {
+      "source": "react-aria.adobe.com",
+      "sourceType": "well-known",
+      "computedHash": "1a62e5b866622b7ec49678be485ff18fdb26896cc8c3aa294490a7286d759903"
+    },
+    "turborepo": {
+      "source": "vercel/turborepo",
+      "sourceType": "github",
+      "skillPath": "skills/turborepo/SKILL.md",
+      "computedHash": "ed4712f9d58df1a6cedd36508dd78b7c7f6a397cdbad2d6e7248689ff79e9f2f"
+    },
+    "vitest": {
+      "source": "antfu/skills",
+      "sourceType": "github",
+      "skillPath": "skills/vitest/SKILL.md",
+      "computedHash": "0efd9cf8c56aada060d418d009cfe621a7915d0c73a958fe611985bc0c2fa4b8"
+    },
+    "workleap-logging": {
+      "source": "workleap/wl-logging",
+      "sourceType": "github",
+      "skillPath": "agent-skills/workleap-logging/SKILL.md",
+      "computedHash": "f5fdf2121a766b0933493cd5a18b6f85b4bf2074f35c7903631daa455647570e"
+    },
+    "workleap-squide": {
+      "source": "workleap/wl-squide",
+      "sourceType": "github",
+      "skillPath": "agent-skills/workleap-squide/SKILL.md",
+      "computedHash": "09379697e02d7767c855136b305840e4866dfa68a86e3c00fc0d0cc536a8764e"
+    },
+    "workleap-telemetry": {
+      "source": "workleap/wl-telemetry",
+      "sourceType": "github",
+      "skillPath": "agent-skills/workleap-telemetry/SKILL.md",
+      "computedHash": "cf5d111ab8115185e7dca17b5d9e01bd482f2641e0a224fa2f389805a20fca33"
+    },
+    "workleap-web-configs": {
+      "source": "workleap/wl-web-configs",
+      "sourceType": "github",
+      "skillPath": "agent-skills/workleap-web-configs/SKILL.md",
+      "computedHash": "76b96597068934d5c4b2c7477cbe8f1ceeb84b2333bdf57b0203f76baaf9943e"
+    }
+  }
+}
