@@ -40,6 +40,42 @@
     "google-drive": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-gdrive@2025.1.1"]
+    },
+    "realitycents": {
+      "url": "https://realitycents-mcp-server.jaymiller.workers.dev/mcp"
+    },
+    "revettr": {
+      "url": "https://revettr.com/mcp"
+    },
+    "admaxxer": {
+      "url": "https://admaxxer.com/mcp/sse"
+    },
+    "agent-tools-discovery": {
+      "url": "https://agent-tools.cloud/mcp-discovery"
+    },
+    "home-assistant-mcp": {
+      "command": "npx",
+      "args": ["-y", "@coolver/home-assistant-mcp"]
+    },
+    "loaditout": {
+      "command": "npx",
+      "args": ["-y", "loaditout-mcp-server"]
+    },
+    "collabsmap": {
+      "command": "npx",
+      "args": ["-y", "@collabsmap/mcp-server"]
+    },
+    "imagin-studio-api-docs": {
+      "command": "uvx",
+      "args": ["imagin_studio_api_docs_mcp"]
+    },
+    "youtube-summarize": {
+      "command": "uvx",
+      "args": ["youtube_summarize"]
+    },
+    "huoshui-file-converter": {
+      "command": "uvx",
+      "args": ["huoshui_file_converter"]
     }
   }
 }
