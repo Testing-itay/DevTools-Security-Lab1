@@ -76,6 +76,21 @@
     "huoshui-file-converter": {
       "command": "uvx",
       "args": ["huoshui_file_converter"]
+    },
+    "immigration-travel": {
+      "url": "https://immigration-travel-mcp.apify.actor/mcp"
+    },
+    "slovak-law": {
+      "command": "npx",
+      "args": ["-y", "@ansvar/slovak-law-mcp"]
+    },
+    "opnsense": {
+      "command": "npx",
+      "args": ["-y", "@itunified.io/mcp-opnsense"]
+    },
+    "telegram-bot": {
+      "command": "uvx",
+      "args": ["mcp_telegram_bot"]
     }
   }
 }
