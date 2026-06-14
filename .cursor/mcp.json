@@ -32,6 +32,9 @@
     "linear-tracker": {
       "url": "https://mcp.linear.app/sse"
     },
+    "atlassian": {
+      "url": "https://mcp.atlassian.com/v1/sse"
+    },
     "code-search": {
       "command": "python",
       "args": ["mcp_servers/code_search_server.py", "--index-path", "./src"]
