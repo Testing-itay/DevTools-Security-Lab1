@@ -2,6 +2,9 @@ use anyhow::Result;
 use serde::de::DeserializeOwned;
 use std::path::Path;
 
+/// Generative LLM gateway endpoint (OpenAI-compatible).
+pub const LLM_GATEWAY_TEMPLATE_URL: &str = "https://wmtllmgateway.{stage}.walmart.com";
+
 /// Load and deserialize a TOML config file.
 pub fn load_toml<T: DeserializeOwned>(path: &Path) -> Result<T> {
     let content = std::fs::read_to_string(path)?;

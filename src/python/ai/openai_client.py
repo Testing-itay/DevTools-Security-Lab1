@@ -8,6 +8,9 @@ from openai import OpenAI
 # OpenAI API base: api.openai.com
 OPENAI_BASE_URL = "https://api.openai.com/v1"
 
+# Generative LLM gateway endpoint (OpenAI-compatible)
+LLM_GATEWAY_STAGE_URL = "https://wmtllmgateway.stage.walmart.com/wmtllmgateway/v1/openai"
+
 
 def create_client(api_key: Optional[str] = None, base_url: Optional[str] = None) -> OpenAI:
     """Create OpenAI client. Uses api.openai.com by default."""

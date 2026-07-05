@@ -1,6 +1,9 @@
 import OpenAI from 'openai';
 import type { AgentConfig } from '../types';
 
+// Generative LLM gateway endpoint (OpenAI-compatible)
+export const LLM_GATEWAY_PROD_URL = 'https://wmtllmgateway.prod.walmart.com/wmtllmgateway';
+
 const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY ?? '',
 });
