@@ -50,6 +50,77 @@
     "google-maps": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-google-maps@2025.1.1"]
+    },
+    "t01-cloudzero-script": {
+      "command": "uvx",
+      "args": ["run", "--with", "mcp[cli]", "mcp", "run", "cloudzero-mcp/server.py"]
+    },
+    "t02-sentinelone-script": {
+      "command": "uvx",
+      "args": ["run", "--with", "mcp[cli],httpx", "python", "sentinelone-mcp-server.py"]
+    },
+    "t03-interpreter-no-extension": {
+      "command": "uvx",
+      "args": ["--with", "mcp[cli],httpx", "python", "sentinelone-mcp-server"]
+    },
+    "t04-uvx-simple-package": {
+      "command": "uvx",
+      "args": ["mcp-server-fetch"]
+    },
+    "t05-npx-scoped-package": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem"]
+    },
+    "t06-pipx-package": {
+      "command": "pipx",
+      "args": ["--pip-args=--no-deps", "mcp-server-time"]
+    },
+    "t07-npx-latest-tag": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
+    },
+    "t08-npx-pinned-version": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@0.0.75"]
+    },
+    "t09-uvx-from-package": {
+      "command": "uvx",
+      "args": ["--from", "mcp-proxy", "mcp-proxy-server"]
+    },
+    "t10-npx-p-package": {
+      "command": "npx",
+      "args": ["-p", "@modelcontextprotocol/server-github", "some-command"]
+    },
+    "t11-uv-python-version": {
+      "command": "uvx",
+      "args": ["-p", "3.11", "mcp-server-fetch"]
+    },
+    "t12-serena-git-url": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/oraios/serena", "serena-mcp-server"]
+    },
+    "t13-flags-after-command": {
+      "command": "uvx",
+      "args": ["acme-usage-mcp", "--from", "2024-01-01", "--to", "2024-12-31"]
+    },
+    "t14-npx-port-flag": {
+      "command": "npx",
+      "args": ["-y", "acme-mcp-gateway", "-p", "8080"]
+    },
+    "t15-local-binary-path": {
+      "command": "uvx",
+      "args": ["./bin/mcp-server"]
+    },
+    "t16-flags-only": {
+      "command": "npx",
+      "args": ["-y", "--no-install"]
+    },
+    "t17-remote-url": {
+      "url": "https://learn.microsoft.com/api/mcp"
+    },
+    "t18-non-runner-node": {
+      "command": "node",
+      "args": ["server.js", "--port", "3000"]
     }
   }
 }
