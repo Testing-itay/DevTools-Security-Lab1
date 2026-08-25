@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "openapi-registry": {
+      "command": "uv",
+      "args": [
+        "run",
+        "openapi-registry-mcp"
+      ]
+    }
+  }
+}

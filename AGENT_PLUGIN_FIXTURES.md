@@ -41,7 +41,7 @@ are silent.
 
 ## Manifest fixtures
 
-56 `plugin.json` files: 44 must be detected, 12 must not. Four sit at depth 1–2
+58 `plugin.json` files: 46 must be detected, 12 must not. Six sit at depth 1–2
 and the remaining 52 at depth 3–6, matching the measured distribution where
 1,702 of 1,718 files are nested deeper than the repository's top level. Today's
 `GetRelevantFilePathsAsync` override restricts lookup to top-level directories,
@@ -51,7 +51,6 @@ so the traversal change is the feature and not an edge case.
 
 | Fixture | Exercises | Signal | Expected | Modelled on |
 |---|---|---|---|---|
-| `.claude-plugin/plugin.json` | Vendor dir at repo root | `.claude-plugin` | **accept** | 646 `.claude-plugin` files |
 | `plugins/code-apps-preview/.plugin/plugin.json` | Legacy bare `.plugin` | `.plugin` | **accept** | Prudential UAT / Fiserv, 5 files |
 | `plugins/code-guardian/.claude-plugin/plugin.json` | Full Claude package | `.claude-plugin` | **accept** | 646 `.claude-plugin` files |
 | `plugins/devin-triage/.devin-plugin/plugin.json` | Devin — undocumented vendor | `.devin-plugin` | **accept** | Tesco `agent-tools`, 1 file |
@@ -62,10 +61,13 @@ so the traversal change is the feature and not an edge case.
 | `plugins/tab-navigator/.cursor-plugin/plugin.json` | Cursor | `.cursor-plugin` | **accept** | 98 `.cursor-plugin` files |
 | `plugins/windsurf-flow/.windsurf-plugin/plugin.json` | Windsurf — convention only | `.windsurf-plugin` | **accept** | absent from the scan and from all vendor docs |
 
-### Deduplication — one logical plugin, five sibling manifests
+### Deduplication — one logical plugin, many sibling manifests
 
 | Fixture | Exercises | Signal | Expected | Modelled on |
 |---|---|---|---|---|
+| `.claude-plugin/plugin.json` | Root multi-vendor group 1/3 | `.claude-plugin` | **accept** | Capital Group `mempalace` — 9 repos carry several vendor dirs at the repo root |
+| `.codex-plugin/plugin.json` | Root multi-vendor group 3/3 | `.codex-plugin` | **accept** | Capital Group `mempalace` |
+| `.cursor-plugin/plugin.json` | Root multi-vendor group 2/3 | `.cursor-plugin` | **accept** | Capital Group `mempalace` |
 | `skills/3rd-party/superpowers/.claude-plugin/plugin.json` | Dedup group 1/5 | `.claude-plugin` | **accept** | Tesco `agent-tools` |
 | `skills/3rd-party/superpowers/.codex-plugin/plugin.json` | Dedup group 2/5 | `.codex-plugin` | **accept** | Tesco `agent-tools` |
 | `skills/3rd-party/superpowers/.cursor-plugin/plugin.json` | Dedup group 3/5 | `.cursor-plugin` | **accept** | Tesco `agent-tools` |
@@ -80,7 +82,7 @@ so the traversal change is the feature and not an edge case.
 | `bundles/plugins/ai-documentation-workflow/agents/doc-orchestrator/plugin.json` | `*.agent.md` + `.apm/` | `doc-orchestrator.agent.md` | **accept** | Shell `ide-elevate-ai-marketplace` |
 | `bundles/plugins/ai-documentation-workflow/agents/doc-writer/plugin.json` | `*.agent.md` + `.apm/` | `doc-writer.agent.md` | **accept** | Shell `ide-elevate-ai-marketplace` |
 | `bundles/plugins/ai-documentation-workflow/plugin.json` | Bundle level | `agents/` | **accept** | Shell `ide-elevate-ai-marketplace` |
-| `bundles/plugins/python-api-plugin/agents/py-plugin-endpoint-designer/plugin.json` | `*.agent.md`, depth 6 | `py-plugin-endpoint-designer.agent.md` | **accept** | Shell `ewai-test-backend-project` |
+| `bundles/plugins/python-api-plugin/agents/py-plugin-endpoint-designer/plugin.json` | `*.agent.md`, depth 6 | `.mcp.json` | **accept** | Shell `ewai-test-backend-project` |
 | `bundles/plugins/python-api-plugin/plugin.json` | Bundle level | `agents/` | **accept** | Shell `ewai-test-backend-project` |
 | `bundles/plugins/sds-frontend-plugin/agents/sds-plugin-form-builder/plugin.json` | `*.agent.md`, depth 6 | `sds-plugin-form-builder.agent.md` | **accept** | Shell `ewai-test-frontend-project` |
 | `bundles/plugins/sds-frontend-plugin/plugin.json` | Bundle level | `agents/` | **accept** | Shell `ewai-test-frontend-project` |
@@ -152,13 +154,84 @@ record null, not true.
 
 ## Deduplication
 
-`skills/3rd-party/superpowers/` is one logical plugin shipping five sibling
-vendor manifests over a single shared tree — the measured worst case (Tesco
-`agent-tools`). Collapsing by `(plugin name, plugin root directory)` gives 40
-distinct plugins from 44 accepted manifests here. Collapsing by manifest path
-gives 44 and inflates the inventory.
+Two groups, because the two shapes are different code paths:
 
-## Three things building these fixtures surfaced
+- `skills/3rd-party/superpowers/` ships **five** sibling vendor manifests over one
+  shared nested tree — the measured worst case (Tesco `agent-tools`).
+- The repository root carries **three** vendor manifests under one name, so the
+  group's root is the string `.`. Nine repositories in the scan look like this;
+  Capital Group `mempalace` carries four at its root.
+
+Collapsing by `(plugin name, plugin root directory)` gives 40 distinct plugins
+from 46 accepted manifests. Collapsing by manifest path gives 46 and inflates the
+inventory by 15%.
+
+The repository root also carries a **second, differently named** plugin: a bare
+`plugin.json` alongside `.claude-plugin/plugin.json`. One repository in the scan
+does this (Shell `ddni-sei-arscontexta`), and it means a single plugin root can
+hold two plugins — which is what makes content ownership at the root ambiguous
+rather than merely broad.
+
+## Linkage
+
+Detection produces entities; linkage decides what each one owns. The old rule
+compared the **first path segment**, which is broken in both directions: under
+`plugins/` every plugin shares that segment, so each one claims every other one's
+content.
+
+A skill or MCP server belongs to a plugin when its path sits under that plugin's
+**root directory**. A vendor directory is packaging, not identity, so the root of
+`plugins/archie/.claude-plugin/plugin.json` is `plugins/archie`:
+
+```
+plugins/archie/.claude-plugin/plugin.json   root is plugins/archie
+plugins/archie/plugin-skills/adr-review/    linked
+plugins/archie/.mcp.json                    linked
+plugins/sds/skills/review/SKILL.md          not linked to archie
+.claude/settings.json                       declared only, holds nothing here
+```
+
+### Content to plugin
+
+104 content files (`SKILL.md`, `.mcp.json`, `mcp.json`) against 40 plugin roots.
+
+| Case | Fixture | Expected |
+|---|---|---|
+| Same skill path under two roots sharing a parent segment | `plugins/code-guardian/skills/review/SKILL.md` vs `plugins/sds/skills/review/SKILL.md` | one owner each; a first-segment or name rule links both to both |
+| Same MCP **server name** under three roots | `code-search` in `code-guardian`, `mcp-bridge`, `tab-navigator` | resolved by containment, never by server name |
+| Nested plugin roots | `bundles/plugins/python-api-plugin/agents/py-plugin-endpoint-designer/{skills/schema-draft,.mcp.json}` | owned by the inner plugin, not by the bundle |
+| Bundle's own content | `bundles/plugins/python-api-plugin/skills/endpoint-review/` | owned by the bundle |
+| Three-level nesting | `bundles/plugins/sds-frontend-plugin/skills/sds-plugin-a11y-check/SKILL.md` | innermost of three candidate roots |
+| Declared but not shipped | `@acme/security-tools`, `flaky-test-quarantine`, `doc-agent`, `legacy-pr-summarizer` | plugin entity with no content and no manifest |
+
+10 plugin-to-MCP-server pairs across 7 manifests exercise `RelatedMcpServerIds`
+and `RelatedAgentPluginIds` in both directions.
+
+### Plugin to agent
+
+There is no provider field, but the surface identifies the agent: `.claude/settings.json`
+is Claude Code, `.github/copilot/settings.json` is Copilot, `.codex-plugin/` is
+Codex. Current attribution across the 46 accepted manifests and 3 declaration
+surfaces:
+
+| Agent | Plugins | Root surface for `AiAgentsCollector` |
+|---|---|---|
+| claude-code | 9 | `.claude/` present |
+| copilot | 3 | `.github/` present |
+| cursor | 3 | `.cursor/` present |
+| codex | 3 | `.codex/` present |
+| gemini | 1 | `.gemini/` present |
+| antigravity, devin, kimi, windsurf | 6 | **absent** — no agent entity to link to |
+| none | 30 | no vendor directory and no declaration |
+
+Two things that fixture the caveats directly. First, `superpowers` and the
+repo-root group each carry several vendor directories for **one** plugin, which is
+"supports these agents", not "these agents use it". Second, four vendors named in
+the fixtures have no matching root surface in this repository, so a plugin can
+name an agent that `AiAgentsCollector` never produced — reproducible here without
+building a second repo.
+
+## Findings
 
 1. **`skill.json` admits the Dify i18n bundles.** `web/i18n/en-US/plugin.json`
    is a translation-strings file, but its directory contains a literal
@@ -178,7 +251,18 @@ gives 44 and inflates the inventory.
    N agents yields N+1 entities. Whether that is right is a product question, but
    it is not currently a decision.
 
-3. **`packages/` and `dist/` are gitignored in this repo.** The nested declaration
+3. **A repo-root manifest absorbs the whole repository under pure containment.**
+   16 of 1,718 measured manifests sit at the repository root, so the plugin root is
+   `.` and every path is under it. Here that means **73 of 104 content files are
+   claimed by the root plugin and by nothing else** — including `.claude/skills/`,
+   `.cursor/skills/`, `.github/skills/` and `lib/ai-skills/`, which are agent-level
+   skills that belong to an agent and not to any plugin. 31 files have more than
+   one owning root, up to three deep. Containment as written is therefore not
+   enough on its own: it needs nearest-ancestor resolution to pick one owner, and
+   agent-surface directories need excluding from plugin content. The verifier
+   prints both readings so the gap is a number rather than an opinion.
+
+4. **`packages/` and `dist/` are gitignored in this repo.** The nested declaration
    fixture therefore sits at `services/api/.claude/settings.json` rather than the
    `packages/api/...` path named in the plan, and the npm reject sits at
    `lib/dataops-ai-plugins/` rather than `packages/dataops-ai-plugins/`. Same
@@ -190,11 +274,23 @@ gives 44 and inflates the inventory.
 python3 verify_agent_plugin_fixtures.py
 ```
 
-It applies the three tests to every `plugin.json` in the tree, asserts each one
-lands on the verdict this document claims, and prints the dedup collapse and the
-parsed declaration surfaces. Exit 0 means the fixtures match. It checks the
-fixtures, not the collector — the collector is expected to reproduce these
-verdicts once it is rebased on `BaseFilesContentPropertiesCollector`.
+It applies the three tests to every `plugin.json` in the tree and asserts each one
+lands on the verdict this document claims. It then resolves every `SKILL.md`,
+`.mcp.json` and `mcp.json` to its owning plugin root and asserts that too, and
+reports:
+
+- the dedup collapse, per group
+- the parsed declaration surfaces, with each key split on its last `@`
+- content owned by a nested plugin, by a repo-root manifest only, or by nothing
+- content names that appear under more than one plugin root
+- plugin-to-MCP-server pairs
+- where containment and nearest-ancestor disagree, and how deep
+- plugin-to-agent attribution, and which named vendors have no root surface
+- plugins declared in a `settings.json` that ship no manifest here
+
+Exit 0 means the fixtures match. It checks the fixtures, not the collector — the
+collector is expected to reproduce these verdicts once it is rebased on
+`BaseFilesContentPropertiesCollector`.
 
 `plugins/invalid-plugin-json/plugin/plugin.json` is intentionally malformed: it
 must be rejected at parse time without failing extraction. It is the only invalid

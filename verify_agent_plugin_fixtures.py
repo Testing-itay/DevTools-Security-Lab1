@@ -107,6 +107,10 @@ EXPECT = {
  'plugin.json':'B',
  # A: vendor conventions
  '.claude-plugin/plugin.json':'A',
+ # multi-vendor packaging at the repo root: one logical plugin, three manifests,
+ # all resolving to root "." (Capital Group mempalace shape, 9 repos)
+ '.cursor-plugin/plugin.json':'A',
+ '.codex-plugin/plugin.json':'A',
  'plugins/code-guardian/.claude-plugin/plugin.json':'A',
  'plugins/tab-navigator/.cursor-plugin/plugin.json':'A',
  'plugins/repo-refactor/.codex-plugin/plugin.json':'A',
@@ -169,6 +173,125 @@ EXPECT = {
  # known collision: exact-name marker skill.json admits a Dify i18n bundle
  'web/i18n/en-US/plugin.json':'B',
 }
+
+# --- linkage ---------------------------------------------------------------
+# A skill or MCP server belongs to a plugin when its path sits under that
+# plugin's root directory. A vendor directory is packaging, not identity, so
+# the root of `plugins/archie/.claude-plugin/plugin.json` is `plugins/archie`.
+#
+# Two readings of "under the root" diverge as soon as plugin roots nest:
+#   containment      every plugin root that is an ancestor owns the file
+#   nearest ancestor exactly one owner, the innermost root
+# Both are reported, because a repo-root manifest makes them differ sharply.
+
+CONTENT_NAMES = {"SKILL.md", ".mcp.json", "mcp.json"}
+
+# Which agent a plugin is attributable to. The surface identifies the agent;
+# there is no provider field to read.
+VENDOR_AGENT = {
+    ".claude-plugin": "claude-code",
+    ".cursor-plugin": "cursor",
+    ".codex-plugin": "codex",
+    ".gemini-plugin": "gemini",
+    ".antigravity-plugin": "antigravity",
+    ".devin-plugin": "devin",
+    ".kimi-plugin": "kimi",
+    ".windsurf-plugin": "windsurf",
+    ".plugin": None,  # legacy, carries no vendor
+}
+DECLARATION_AGENT = {
+    ".claude/settings.json": "claude-code",
+    ".github/copilot/settings.json": "copilot",
+}
+# Root surfaces AiAgentsCollector can see. It only looks at the repo root, so a
+# plugin naming a vendor with no root surface has no agent entity to link to.
+ROOT_AGENT_SURFACES = {
+    ".claude": "claude-code", ".cursor": "cursor", ".codex": "codex",
+    ".gemini": "gemini", ".github": "copilot",
+}
+
+# Expected nearest owner for every content file whose owner is a nested plugin
+# root. Content owned only by a repo-root manifest is asserted by count below.
+EXPECT_OWNER = {
+    # cross-link trap: same skill path under two roots sharing a parent segment
+    "plugins/code-guardian/skills/review/SKILL.md": "code-guardian",
+    "plugins/sds/skills/review/SKILL.md": "sds",
+    # same MCP server name under two roots: linkage cannot key on server name
+    "plugins/code-guardian/.mcp.json": "code-guardian",
+    "plugins/tab-navigator/.mcp.json": "tab-navigator",
+    # nested roots: the inner plugin owns its content, not the bundle
+    "bundles/plugins/python-api-plugin/agents/py-plugin-endpoint-designer/skills/schema-draft/SKILL.md": "py-plugin-endpoint-designer",
+    "bundles/plugins/python-api-plugin/agents/py-plugin-endpoint-designer/.mcp.json": "py-plugin-endpoint-designer",
+    "bundles/plugins/python-api-plugin/skills/endpoint-review/SKILL.md": "python-api-plugin",
+    "bundles/plugins/ai-documentation-workflow/skills/doc-outline/SKILL.md": "ai-documentation-workflow",
+    "bundles/plugins/sds-frontend-plugin/skills/sds-plugin-a11y-check/SKILL.md": "sds-plugin-a11y-check",
+    # ordinary packaging
+    "plugins/appstore-migrator/.mcp.json": "appstore-migrator",
+    "plugins/appstore-migrator/skills/schema-diff/SKILL.md": "appstore-migrator",
+    "plugins/archie/plugin-skills/adr-review/SKILL.md": "archie",
+    "plugins/cfa-common/.mcp.json": "cfa-common",
+    "plugins/cfa-common/skills/registry-lookup/SKILL.md": "cfa-common",
+    "plugins/check-duplicate-skill/plugin-skills/similarity-scan/SKILL.md": "check-duplicate-skill",
+    "plugins/code-guardian/skills/taint-tracing/SKILL.md": "code-guardian",
+    "plugins/copilot-marketplace/.mcp.json": "copilot-marketplace",
+    "plugins/copilot-marketplace/skills/calypso-backend-development/SKILL.md": "copilot-marketplace",
+    "plugins/copilot-marketplace/skills/calypso-backend-review/SKILL.md": "copilot-marketplace",
+    "plugins/copilot-marketplace/skills/calypso-frontend-development/SKILL.md": "copilot-marketplace",
+    "plugins/devin-triage/skills/flaky-quarantine/SKILL.md": "devin-triage",
+    "plugins/doctopus/skills/doc-audit/SKILL.md": "doctopus",
+    "plugins/gemini-translate/skills/port-service/SKILL.md": "gemini-translate",
+    "plugins/mcp-bridge/mcp.json": "mcp-bridge",
+    "plugins/mem-palace/skills/session-recall/SKILL.md": "mem-palace",
+    "plugins/sds/skills/token-audit/SKILL.md": "sds",
+    "skills/3rd-party/superpowers/skills/brainstorming/SKILL.md": "superpowers",
+    "skills/3rd-party/superpowers/skills/root-cause-tracing/SKILL.md": "superpowers",
+    "skills/checkout/optimization-triage/SKILL.md": "optimization-triage",
+    "skills/get-prices/SKILL.md": "get-prices",
+    ".agents/skills/anomaly-review/SKILL.md": "spend-control",
+}
+
+
+def plugin_roots(manifests):
+    """root path -> set of plugin names declared at that root."""
+    roots = collections.defaultdict(set)
+    for rel in manifests:
+        verdict, _ = classify(rel)
+        if verdict not in ("A", "B", "C-accept"):
+            continue
+        try:
+            name = json.loads((ROOT / rel).read_text()).get("name")
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            continue
+        if name:
+            roots[plugin_root(rel, verdict)].add(name)
+    return roots
+
+
+def content_files():
+    out = []
+    for dirpath, _, filenames in os.walk(ROOT):
+        if ".git" in dirpath.split(os.sep):
+            continue
+        rel_dir = pathlib.Path(dirpath).relative_to(ROOT)
+        for name in sorted(filenames):
+            if name in CONTENT_NAMES:
+                out.append(str(rel_dir / name))
+    return sorted(out)
+
+
+def owning_roots(rel, roots):
+    """Plugin roots containing this file, innermost first."""
+    found = []
+    node = pathlib.Path(rel).parent
+    while True:
+        key = str(node)
+        if key in roots:
+            found.append(key)
+        if key in (".", ""):
+            break
+        node = node.parent
+    return found
+
 
 def main():
     manifests = sorted(
@@ -251,6 +374,118 @@ def main():
             name, _, marketplace = key.rpartition("@")
             print("    name=%-26s marketplace=%-26s enabled=%s"
                   % (repr(name), repr(marketplace), value))
+
+    # ---- linkage: skills and MCP servers to their plugin --------------------
+    roots = plugin_roots(manifests)
+    contents = content_files()
+
+    print("\nlinkage: content -> plugin")
+    print("  plugin roots       %d" % len(roots))
+    print("  content files      %d  (SKILL.md, .mcp.json, mcp.json)" % len(contents))
+
+    nested_owned, root_only, unowned, multi = [], [], [], []
+    for rel in contents:
+        owners = owning_roots(rel, roots)
+        if not owners:
+            unowned.append(rel)
+            continue
+        if len(owners) > 1:
+            multi.append((rel, owners))
+        if owners[0] == ".":
+            root_only.append(rel)
+        else:
+            nested_owned.append((rel, owners[0]))
+
+    for rel, owner in nested_owned:
+        names = sorted(roots[owner])
+        expected = EXPECT_OWNER.get(rel)
+        if expected is None:
+            failures.append("no owner expectation recorded: %s -> %s" % (rel, names))
+        elif expected not in names:
+            failures.append("%s: expected owner %s, got %s"
+                            % (rel, expected, names))
+    for rel in EXPECT_OWNER:
+        if rel not in dict(nested_owned):
+            failures.append("owner fixture missing or not nested-owned: %s" % rel)
+
+    print("  owned by a nested plugin   %d" % len(nested_owned))
+    print("  owned only by a repo-root manifest %d" % len(root_only))
+    print("  owned by no plugin         %d" % len(unowned))
+
+    # Same content name under more than one plugin root: linkage must resolve by
+    # containment, never by name.
+    by_name = collections.defaultdict(set)
+    for rel, owner in nested_owned:
+        path = pathlib.Path(rel)
+        key = path.parent.name if path.name == "SKILL.md" else path.name
+        by_name[key].add(owner)
+    collisions = {k: v for k, v in by_name.items() if len(v) > 1}
+    print("\n  same content name under >1 plugin root (name matching would cross-link)")
+    if not collisions:
+        failures.append("no name-collision fixture: the cross-link trap is untested")
+    for key, owners in sorted(collisions.items()):
+        print("    %-14s %s" % (key, ", ".join(sorted(owners))))
+
+    # MCP <-> plugin, both directions.
+    print("\n  MCP servers declared inside a plugin root")
+    mcp_pairs = 0
+    for rel, owner in nested_owned:
+        if pathlib.Path(rel).name not in (".mcp.json", "mcp.json"):
+            continue
+        try:
+            servers = sorted(json.loads((ROOT / rel).read_text())
+                             .get("mcpServers", {}))
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            continue
+        mcp_pairs += len(servers)
+        print("    %-28s %s" % (sorted(roots[owner])[0], ", ".join(servers)))
+    print("    %d plugin/server pairs across %d manifests"
+          % (mcp_pairs, sum(1 for r, _ in nested_owned
+                            if pathlib.Path(r).name in (".mcp.json", "mcp.json"))))
+
+    # Where the two readings of "under the root" disagree.
+    print("\n  containment vs nearest ancestor")
+    print("    files with more than one owning root %d" % len(multi))
+    deepest = max(multi, key=lambda kv: len(kv[1])) if multi else None
+    if deepest:
+        print("    deepest nesting: %s" % deepest[0])
+        print("      owners innermost-first: %s" % ", ".join(deepest[1]))
+
+    # ---- linkage: plugin to agent ------------------------------------------
+    print("\nlinkage: plugin -> agent")
+    attributed, unattributed = collections.defaultdict(list), []
+    for rel in manifests:
+        verdict, _ = classify(rel)
+        if verdict not in ("A", "B", "C-accept"):
+            continue
+        parent = pathlib.Path(rel).parent.name
+        agent = VENDOR_AGENT.get(parent)
+        if agent:
+            attributed[agent].append(rel)
+        else:
+            unattributed.append(rel)
+    for rel, enabled in sorted(declarations):
+        agent = DECLARATION_AGENT.get(rel)
+        if agent:
+            attributed[agent].extend("%s#%s" % (rel, k) for k in enabled)
+    for agent in sorted(attributed):
+        surface = "root surface present" if agent in ROOT_AGENT_SURFACES.values() \
+                  else "NO root surface, nothing to link to"
+        print("  %-12s %2d  (%s)" % (agent, len(attributed[agent]), surface))
+    print("  %-12s %2d  (no vendor directory, no declaration: agent unknown)"
+          % ("-", len(unattributed)))
+
+    missing_surface = sorted(a for a in attributed
+                             if a not in ROOT_AGENT_SURFACES.values())
+    if missing_surface:
+        print("\n  vendor named with no root agent surface in this repo:")
+        print("    %s" % ", ".join(missing_surface))
+
+    # A plugin declared in settings.json but shipping no manifest here.
+    declared = {k.rpartition("@")[0] for _, e in declarations for k in e}
+    shipped = {n for names in roots.values() for n in names}
+    print("\n  declared in settings.json but no manifest in the repo:")
+    print("    %s" % ", ".join(sorted(declared - shipped)))
 
     if failures:
         print("\nFAILED (%d)" % len(failures))
