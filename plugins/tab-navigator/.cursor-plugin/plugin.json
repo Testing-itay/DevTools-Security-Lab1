@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "tab-navigator",
+  "version": "1.8.0",
+  "description": "Cursor tab-completion and symbol-jump helpers for the polyglot service tree.",
+  "author": {
+    "name": "Developer Experience",
+    "email": "dx@devtools-engine.example.com"
+  },
+  "license": "MIT",
+  "commands": "./commands"
+}

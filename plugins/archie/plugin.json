@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "archie",
+  "version": "1.7.2",
+  "description": "Architecture review plugin. Ships its skills under plugin-skills/, not skills/.",
+  "author": {
+    "name": "Enterprise Architecture",
+    "email": "ea@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0",
+  "skills": "./plugin-skills",
+  "agents": "./plugin-agents"
+}

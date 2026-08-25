@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "spend-control",
+  "version": "1.2.0",
+  "description": "Spend-control agents: budget guardrails, anomaly review and approval routing.",
+  "author": {
+    "name": "FinOps",
+    "email": "finops@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0",
+  "agents": "./agents",
+  "skills": "./skills",
+  "prompts": "./prompts"
+}

@@ -125,8 +125,12 @@ devtools-engine/
 ├── .cursor/                 # Cursor IDE config
 ├── .codex/                  # Codex AI config
 ├── .gemini/                 # Gemini AI config
-└── .github/                 # GitHub workflows & Copilot
+├── .github/                 # GitHub workflows & Copilot
+└── plugins/                 # Agent plugin packages
 ```
+
+Agent plugin layouts and their expected detection outcomes are documented in
+[AGENT_PLUGIN_FIXTURES.md](AGENT_PLUGIN_FIXTURES.md).
 
 ## License
 

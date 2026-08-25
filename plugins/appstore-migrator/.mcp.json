@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "catalogue": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@internal/catalogue-mcp@1.4.0"
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "get-prices",
+  "version": "0.3.1",
+  "description": "Fetches effective prices for a product set across regions.",
+  "author": {
+    "name": "Payments Science",
+    "email": "payments-science@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0"
+}

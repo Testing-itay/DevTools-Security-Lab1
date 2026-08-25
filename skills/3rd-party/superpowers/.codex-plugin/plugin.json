@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "superpowers",
+  "version": "4.2.0",
+  "description": "Shared skill pack published for five agent hosts from one tree.",
+  "author": {
+    "name": "Superpowers Maintainers",
+    "email": "maintainers@superpowers.example.com"
+  },
+  "license": "MIT",
+  "skills": "./skills",
+  "commands": "./commands",
+  "agents": "./agents"
+}

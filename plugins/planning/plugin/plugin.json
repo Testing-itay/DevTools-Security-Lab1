@@ -1,0 +1,13 @@
+{
+  "name": "planning",
+  "version": "0.8.0",
+  "description": "Sprint planning agent that reads the issue tracker and the release calendar.",
+  "author": {
+    "name": "Delivery",
+    "email": "delivery@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "planning"
+  ]
+}

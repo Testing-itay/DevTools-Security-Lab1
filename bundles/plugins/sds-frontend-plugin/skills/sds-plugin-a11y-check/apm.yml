@@ -1,0 +1,8 @@
+apiVersion: apm/v1
+kind: Skill
+metadata:
+  name: sds-plugin-a11y-check
+  version: 1.0.0
+spec:
+  agents: ./agents
+  skills: ./skills

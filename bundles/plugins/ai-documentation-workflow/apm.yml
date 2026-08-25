@@ -1,0 +1,8 @@
+apiVersion: apm/v1
+kind: Package
+metadata:
+  name: ai-documentation-workflow
+  version: 2.1.0
+spec:
+  agents: ./agents
+  skills: ./skills

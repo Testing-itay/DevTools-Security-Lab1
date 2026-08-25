@@ -1,0 +1,8 @@
+apiVersion: apm/v1
+kind: Package
+metadata:
+  name: secrets-scanner
+  version: 1.4.0
+spec:
+  runtime: agent
+  entrypoint: ./secrets-scanner.agent.md

@@ -1,0 +1,13 @@
+{
+  "sources": [
+    {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "ref": "main"
+    },
+    {
+      "source": "react-aria.adobe.com",
+      "sourceType": "well-known"
+    }
+  ]
+}

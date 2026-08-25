@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "doc-writer",
+  "version": "2.1.0",
+  "description": "Writes a service document from its code and its ADRs.",
+  "author": {
+    "name": "IDE Elevate",
+    "email": "ide-elevate@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0",
+  "entrypoint": "./doc-writer.agent.md"
+}

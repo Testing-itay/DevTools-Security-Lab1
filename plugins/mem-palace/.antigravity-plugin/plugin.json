@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "mem-palace",
+  "version": "0.2.0",
+  "description": "Long-horizon memory rules and recall skills for Antigravity sessions.",
+  "author": {
+    "name": "Knowledge Systems",
+    "email": "knowledge@devtools-engine.example.com"
+  },
+  "license": "MIT",
+  "skills": "./skills",
+  "rules": "./rules"
+}

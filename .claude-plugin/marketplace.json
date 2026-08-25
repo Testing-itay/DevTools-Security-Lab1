@@ -1,0 +1,33 @@
+{
+  "name": "devtools-engine-internal",
+  "owner": {
+    "name": "DevTools Platform Team",
+    "email": "platform@devtools-engine.example.com"
+  },
+  "metadata": {
+    "description": "Internal agent-plugin marketplace for DevTools Engine.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "code-guardian",
+      "source": "./plugins/code-guardian",
+      "description": "Static-analysis review agent with SAST triage skills."
+    },
+    {
+      "name": "tab-navigator",
+      "source": "./plugins/tab-navigator",
+      "description": "Cursor-side navigation and completion helpers."
+    },
+    {
+      "name": "repo-refactor",
+      "source": "./plugins/repo-refactor",
+      "description": "Codex refactoring commands for the polyglot services."
+    },
+    {
+      "name": "appstore-migrator",
+      "source": "./plugins/appstore-migrator",
+      "description": "Migration agent for the internal app store."
+    }
+  ]
+}

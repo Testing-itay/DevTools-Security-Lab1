@@ -1,0 +1,14 @@
+{
+  "enabledPlugins": {
+    "code-guardian@devtools-engine-internal": true,
+    "appstore-migrator@basf-appstore": true,
+    "flaky-test-quarantine@devtools-engine-internal": false
+  },
+  "permissions": {
+    "allow": [
+      "Read",
+      "Grep",
+      "Glob"
+    ]
+  }
+}

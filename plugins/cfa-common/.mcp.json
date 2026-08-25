@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "cfa-registry": {
+      "command": "uv",
+      "args": [
+        "run",
+        "cfa-registry-mcp"
+      ]
+    }
+  }
+}

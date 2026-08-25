@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "code-search": {
+      "command": "python",
+      "args": [
+        "mcp_servers/code_search_server.py"
+      ]
+    },
+    "symbol-graph": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@internal/symbol-graph-mcp@0.3.0"
+      ]
+    }
+  }
+}

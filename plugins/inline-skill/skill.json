@@ -1,0 +1,5 @@
+{
+  "name": "inline-skill",
+  "description": "Summarise a service module for a newcomer.",
+  "instructions": "Name the entry point, the data it owns, and its two nearest neighbours."
+}

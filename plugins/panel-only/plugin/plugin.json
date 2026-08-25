@@ -1,0 +1,15 @@
+{
+  "type": "panel",
+  "name": "Zero Button Panel",
+  "id": "devtools-zerobutton-panel",
+  "info": {
+    "description": "Grafana panel manifest. Not an agent plugin.",
+    "author": {
+      "name": "DevTools"
+    },
+    "version": "1.0.0"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=10.0.0"
+  }
+}

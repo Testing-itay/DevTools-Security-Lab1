@@ -1,0 +1,18 @@
+{
+  "category": {
+    "all": "All",
+    "model": "Model",
+    "tool": "Tool",
+    "agent": "Agent Strategy"
+  },
+  "action": {
+    "install": "Install",
+    "uninstall": "Uninstall",
+    "update": "Update"
+  },
+  "source": {
+    "marketplace": "Marketplace",
+    "github": "GitHub",
+    "local": "Local Package File"
+  }
+}

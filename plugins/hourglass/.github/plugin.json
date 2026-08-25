@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "hourglass",
+  "version": "1.0.0",
+  "description": "SLA countdown agent for support escalations.",
+  "author": {
+    "name": "Support Engineering",
+    "email": "support-eng@devtools-engine.example.com"
+  }
+}

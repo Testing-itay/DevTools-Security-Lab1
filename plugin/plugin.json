@@ -1,0 +1,11 @@
+{
+  "type": "app",
+  "name": "Installer test plugin",
+  "id": "test-app",
+  "info": {
+    "version": "1.0.0",
+    "author": {
+      "name": "Grafana Labs"
+    }
+  }
+}

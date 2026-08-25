@@ -1,0 +1,14 @@
+{
+  "name": "archie-internal",
+  "owner": {
+    "name": "Enterprise Architecture",
+    "email": "ea@devtools-engine.example.com"
+  },
+  "plugins": [
+    {
+      "name": "archie",
+      "source": "./",
+      "description": "Architecture review plugin."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+apiVersion: apm/v1
+kind: Agent
+metadata:
+  name: py-plugin-endpoint-designer
+  version: 1.0.0
+spec:
+  runtime: agent
+  entrypoint: ./py-plugin-endpoint-designer.agent.md

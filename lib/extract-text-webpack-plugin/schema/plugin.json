@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "filename": {
+      "type": "string"
+    },
+    "allChunks": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}
