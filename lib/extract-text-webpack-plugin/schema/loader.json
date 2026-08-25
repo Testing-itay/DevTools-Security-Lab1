@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "omit": {
+      "type": "number"
+    },
+    "remove": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "sds",
+  "version": "1.4.0",
+  "description": "Design-system agents and skills. Non-dot parent directory, accepted structurally.",
+  "author": {
+    "name": "Enterprise Web AI",
+    "email": "ewai@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0",
+  "agents": "./agents",
+  "skills": "./skills"
+}

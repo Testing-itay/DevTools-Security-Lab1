@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "code-apps-preview",
+  "version": "1.0.0",
+  "description": "Preview builder for low-code app definitions. Legacy layout, no vendor prefix.",
+  "author": {
+    "name": "eCS AI Enablement",
+    "email": "ecs-ai@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0"
+}

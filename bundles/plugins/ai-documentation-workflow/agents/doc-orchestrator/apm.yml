@@ -1,0 +1,8 @@
+apiVersion: apm/v1
+kind: Agent
+metadata:
+  name: doc-orchestrator
+  version: 1.0.0
+spec:
+  runtime: agent
+  entrypoint: ./doc-orchestrator.agent.md

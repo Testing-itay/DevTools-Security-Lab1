@@ -1,0 +1,8 @@
+{
+  "pluginId": "commerce_media_random_selected_brand",
+  "environment": "lt",
+  "feedType": "commerce-media",
+  "schedule": "0 */4 * * *",
+  "dataScript": "getDataScript.groovy",
+  "renderScript": "itemRenderScript.groovy"
+}

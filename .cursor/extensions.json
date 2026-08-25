@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "anysphere.cursorpyright",
+    "cursor.cursor-vscode-theme"
+  ],
+  "unwantedRecommendations": [
+    "ms-vscode.vscode-typescript-tslint-plugin"
+  ]
+}

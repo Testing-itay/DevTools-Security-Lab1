@@ -1,0 +1,11 @@
+{
+  "type": "datasource",
+  "name": "CloudWatch",
+  "id": "cloudwatch",
+  "info": {
+    "version": "1.0.0",
+    "author": {
+      "name": "Grafana Labs"
+    }
+  }
+}

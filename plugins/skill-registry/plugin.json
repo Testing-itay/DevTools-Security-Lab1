@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "skill-registry",
+  "version": "1.0.0",
+  "description": "Resolves skills from pinned upstream sources into the local tree.",
+  "author": {
+    "name": "AI Tooling",
+    "email": "ai-tooling@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0",
+  "skillSources": "./skill-sources"
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schema/2.0.0/plugin.json",
+  "name": "testiq",
+  "version": "2.3.0",
+  "description": "Test-quality agent: coverage gaps, assertion strength, flake risk.",
+  "author": {
+    "name": "Quality Engineering",
+    "email": "qe@devtools-engine.example.com"
+  }
+}

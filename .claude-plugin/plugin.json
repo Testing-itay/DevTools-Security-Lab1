@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "devtools-engine-toolkit",
+  "version": "3.1.0",
+  "description": "Repo-root plugin bundling the DevTools Engine review agents, skills and MCP servers.",
+  "author": {
+    "name": "DevTools Platform Team",
+    "email": "platform@devtools-engine.example.com",
+    "url": "https://github.com/Testing-itay/DevTools-Security-Lab1"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "code-analysis",
+    "security",
+    "orchestration"
+  ],
+  "commands": "./commands",
+  "agents": "./agents",
+  "skills": "./skills",
+  "mcpServers": "./.mcp.json"
+}

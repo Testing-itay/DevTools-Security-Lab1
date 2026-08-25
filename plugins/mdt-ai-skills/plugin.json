@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "mdt-ai-skills",
+  "version": "3.0.0",
+  "description": "Managed desktop toolkit prompts for access requests and inventory lookups.",
+  "author": {
+    "name": "Managed Desktop",
+    "email": "mdt@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0",
+  "prompts": "./prompts"
+}

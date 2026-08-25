@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "mcp-bridge",
+  "version": "0.7.0",
+  "description": "Bridges the repo's MCP servers into hosts that read a plain mcp.json.",
+  "author": {
+    "name": "AI Tooling",
+    "email": "ai-tooling@devtools-engine.example.com"
+  },
+  "license": "MIT",
+  "mcpServers": "./mcp.json"
+}

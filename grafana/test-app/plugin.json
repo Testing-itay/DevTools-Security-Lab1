@@ -1,0 +1,18 @@
+{
+  "type": "app",
+  "name": "Test App",
+  "id": "devtools-testapp",
+  "info": {
+    "version": "1.0.0",
+    "author": {
+      "name": "DASH"
+    }
+  },
+  "includes": [
+    {
+      "type": "dashboard",
+      "name": "Overview",
+      "path": "dashboards/overview.json"
+    }
+  ]
+}

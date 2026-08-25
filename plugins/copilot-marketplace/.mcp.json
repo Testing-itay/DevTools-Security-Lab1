@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "jira": {
+      "url": "https://jira.internal.example.com/mcp"
+    }
+  }
+}

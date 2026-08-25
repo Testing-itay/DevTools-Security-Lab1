@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "code-guardian",
+  "version": "2.4.1",
+  "description": "Reviews diffs for injection, secret-leak and authz regressions before merge.",
+  "author": {
+    "name": "AppSec Guild",
+    "email": "appsec@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "sast",
+    "review"
+  ],
+  "agents": "./agents",
+  "skills": "./skills",
+  "commands": "./commands",
+  "mcpServers": "./.mcp.json"
+}

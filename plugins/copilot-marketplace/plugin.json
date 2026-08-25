@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "copilot-marketplace",
+  "version": "2.2.0",
+  "description": "Calypso Copilot plugin bundle: backend review, development and support skills.",
+  "author": {
+    "name": "Calypso Platform",
+    "email": "calypso@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0",
+  "skills": "./skills",
+  "mcpServers": "./.mcp.json"
+}

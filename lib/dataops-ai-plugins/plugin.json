@@ -1,0 +1,14 @@
+{
+  "registry": "dataops-ai-plugins",
+  "description": "Registry index for data-platform tooling. Not an agent plugin.",
+  "entries": [
+    {
+      "id": "lineage-graph",
+      "kind": "airflow-operator"
+    },
+    {
+      "id": "quality-gate",
+      "kind": "airflow-operator"
+    }
+  ]
+}

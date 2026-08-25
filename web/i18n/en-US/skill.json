@@ -1,0 +1,8 @@
+{
+  "title": "Skill",
+  "description": "Skill description",
+  "editor": {
+    "name": "Name",
+    "instruction": "Instruction"
+  }
+}

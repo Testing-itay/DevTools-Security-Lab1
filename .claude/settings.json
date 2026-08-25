@@ -1,4 +1,12 @@
 {
+  "enabledPlugins": {
+    "code-guardian@devtools-engine-internal": true,
+    "superpowers@devtools-engine-internal": true,
+    "appstore-migrator@basf-appstore": true,
+    "@acme/security-tools@acme-internal": true,
+    "repo-refactor@devtools-engine-internal": false,
+    "mem-palace@antigravity-labs": false
+  },
   "model": "claude-sonnet-4-20250514",
   "permissions": {
     "allow_file_edit": true,

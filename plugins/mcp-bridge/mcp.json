@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "code-search": {
+      "command": "python",
+      "args": [
+        "mcp_servers/code_search_server.py"
+      ]
+    },
+    "risk-scorer": {
+      "command": "python",
+      "args": [
+        "mcp_servers/risk_scorer_server.py"
+      ]
+    }
+  }
+}

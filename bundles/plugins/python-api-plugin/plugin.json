@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "python-api-plugin",
+  "version": "1.2.0",
+  "description": "Backend bundle: FastAPI endpoint agents and their review skills.",
+  "author": {
+    "name": "Enterprise Web AI",
+    "email": "ewai@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0",
+  "agents": "./agents",
+  "skills": "./skills"
+}

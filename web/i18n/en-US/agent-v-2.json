@@ -1,0 +1,10 @@
+{
+  "strategy": {
+    "router": "Router",
+    "function_call": "Function Calling"
+  },
+  "prompt": {
+    "system": "System prompt",
+    "user": "User prompt"
+  }
+}

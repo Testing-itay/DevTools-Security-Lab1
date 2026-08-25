@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "repo-refactor",
+  "version": "0.9.3",
+  "description": "Codex refactoring commands: extract service, split module, widen a nullable field.",
+  "author": {
+    "name": "Core Platform",
+    "email": "core@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0",
+  "agents": "./agents"
+}

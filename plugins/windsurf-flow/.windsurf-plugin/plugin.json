@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "windsurf-flow",
+  "version": "0.1.0",
+  "description": "Windsurf cascade workflows for the scanner and orchestration services.",
+  "author": {
+    "name": "Developer Experience",
+    "email": "dx@devtools-engine.example.com"
+  },
+  "license": "MIT",
+  "commands": "./commands"
+}

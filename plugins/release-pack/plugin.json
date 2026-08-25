@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "release-pack",
+  "version": "2.0.1",
+  "description": "Release commands and prompts for the six services in this repo.",
+  "author": {
+    "name": "Release Engineering",
+    "email": "releng@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0",
+  "commands": "./release-commands",
+  "prompts": "./release-prompts"
+}

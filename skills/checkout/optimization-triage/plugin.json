@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "optimization-triage",
+  "version": "1.0.4",
+  "description": "Triages checkout conversion regressions against pricing and inventory signals.",
+  "author": {
+    "name": "Payments Science",
+    "email": "payments-science@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0"
+}

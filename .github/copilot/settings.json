@@ -1,0 +1,10 @@
+{
+  "enabledPlugins": {
+    "copilot-marketplace@calypso-internal": true,
+    "doc-agent@chr-copilot-cli": true,
+    "legacy-pr-summarizer@calypso-internal": false
+  },
+  "chat": {
+    "welcomeMessage": "DevTools Engine Copilot workspace"
+  }
+}

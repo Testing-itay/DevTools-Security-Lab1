@@ -1,0 +1,14 @@
+{
+  "name": "cg-ig-marketplace-plugins",
+  "owner": {
+    "name": "Innovation Group",
+    "email": "ig@devtools-engine.example.com"
+  },
+  "plugins": [
+    {
+      "name": "check-duplicate-skill",
+      "source": "./",
+      "description": "Duplicate-skill detector."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+apiVersion: apm/v1
+kind: Agent
+metadata:
+  name: sds-plugin-form-builder
+  version: 1.0.0
+spec:
+  runtime: agent
+  entrypoint: ./sds-plugin-form-builder.agent.md

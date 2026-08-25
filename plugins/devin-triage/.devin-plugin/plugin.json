@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "devin-triage",
+  "version": "1.1.0",
+  "description": "Devin-side triage playbooks for failing CI jobs and flaky integration tests.",
+  "author": {
+    "name": "Release Engineering",
+    "email": "releng@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0",
+  "skills": "./skills"
+}

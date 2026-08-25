@@ -1,0 +1,9 @@
+{
+  "name": "@payo/dataops-ai-plugins",
+  "version": "0.4.2",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "build": "tsc -p ."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "kimi-context",
+  "version": "0.4.2",
+  "description": "Context-window budgeting helpers for long-file review sessions.",
+  "author": {
+    "name": "AI Tooling",
+    "email": "ai-tooling@devtools-engine.example.com"
+  },
+  "license": "MIT"
+}
