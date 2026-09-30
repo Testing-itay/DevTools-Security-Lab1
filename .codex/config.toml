@@ -5,3 +5,30 @@ security-audit = false
 refactoring-helper = true
 test-coverage = true
 dead-code-detector = false
+
+[mcp_servers.codex-openai-docs]
+url = "https://developers.openai.com/mcp"
+
+[mcp_servers.codex-sentry]
+url = "https://mcp.sentry.dev/mcp"
+bearer_token_env_var = "SENTRY_ACCESS_TOKEN"
+
+[mcp_servers.codex-taskwarrior]
+command = "npx"
+args = ["-y", "mcp-server-taskwarrior"]
+startup_timeout_sec = 20
+
+[mcp_servers.codex-taskwarrior.env]
+TASKDATA = "./.task"
+
+[mcp_servers.codex-calculator]
+command = "uvx"
+args = [
+    "mcp-server-calculator",
+]
+tool_timeout_sec = 30
+enabled_tools = ["calculate"]
+
+[mcp_servers.codex-release-notes]
+command = "uv"
+args = ["run", "--with", "mcp[cli]", "mcp", "run", "tools/release_notes/server.py"]

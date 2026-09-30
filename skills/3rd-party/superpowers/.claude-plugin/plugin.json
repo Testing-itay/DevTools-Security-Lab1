@@ -10,5 +10,15 @@
   "license": "MIT",
   "skills": "./skills",
   "commands": "./commands",
-  "agents": "./agents"
+  "agents": "./agents",
+  "mcpServers": {
+    "superpowers-transcripts": {
+      "command": "npx",
+      "args": ["-y", "@kimtaeyoon83/mcp-server-youtube-transcript"]
+    },
+    "superpowers-context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp"
+    }
+  }
 }

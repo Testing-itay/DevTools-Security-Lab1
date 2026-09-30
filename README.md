@@ -130,7 +130,9 @@ devtools-engine/
 ```
 
 Agent plugin layouts and their expected detection outcomes are documented in
-[AGENT_PLUGIN_FIXTURES.md](AGENT_PLUGIN_FIXTURES.md).
+[AGENT_PLUGIN_FIXTURES.md](AGENT_PLUGIN_FIXTURES.md). MCP client configs and the
+unpinned-server SCA cases are documented in
+[MCP_SERVER_FIXTURES.md](MCP_SERVER_FIXTURES.md).
 
 ## License
 

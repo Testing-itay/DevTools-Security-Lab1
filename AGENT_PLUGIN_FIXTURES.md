@@ -193,7 +193,7 @@ plugins/sds/skills/review/SKILL.md          not linked to archie
 
 ### Content to plugin
 
-104 content files (`SKILL.md`, `.mcp.json`, `mcp.json`) against 40 plugin roots.
+106 content files (`SKILL.md`, `.mcp.json`, `mcp.json`) against 40 plugin roots.
 
 | Case | Fixture | Expected |
 |---|---|---|
@@ -205,7 +205,10 @@ plugins/sds/skills/review/SKILL.md          not linked to archie
 | Declared but not shipped | `@acme/security-tools`, `flaky-test-quarantine`, `doc-agent`, `legacy-pr-summarizer` | plugin entity with no content and no manifest |
 
 10 plugin-to-MCP-server pairs across 7 manifests exercise `RelatedMcpServerIds`
-and `RelatedAgentPluginIds` in both directions.
+and `RelatedAgentPluginIds` in both directions. These come from `.mcp.json` and
+`mcp.json` files. `code-guardian` and `superpowers` also declare servers inline in
+their `.claude-plugin/plugin.json`, which adds 4 more pairs. The verifier does not
+count those; [MCP_SERVER_FIXTURES.md](MCP_SERVER_FIXTURES.md) covers them.
 
 ### Plugin to agent
 
@@ -253,10 +256,10 @@ building a second repo.
 
 3. **A repo-root manifest absorbs the whole repository under pure containment.**
    16 of 1,718 measured manifests sit at the repository root, so the plugin root is
-   `.` and every path is under it. Here that means **73 of 104 content files are
+   `.` and every path is under it. Here that means **74 of 106 content files are
    claimed by the root plugin and by nothing else** — including `.claude/skills/`,
    `.cursor/skills/`, `.github/skills/` and `lib/ai-skills/`, which are agent-level
-   skills that belong to an agent and not to any plugin. 31 files have more than
+   skills that belong to an agent and not to any plugin. 32 files have more than
    one owning root, up to three deep. Containment as written is therefore not
    enough on its own: it needs nearest-ancestor resolution to pick one owner, and
    agent-surface directories need excluding from plugin content. The verifier
