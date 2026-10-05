@@ -1,0 +1,11 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+{
+  "manifestVersion": "2.0.0",
+  "signatureType": "grafana",
+  "signedByOrg": "grafana"
+}
+-----BEGIN PGP SIGNATURE-----
+FIXTURE-NOT-A-REAL-SIGNATURE
+-----END PGP SIGNATURE-----

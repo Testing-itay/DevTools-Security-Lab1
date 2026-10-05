@@ -1,0 +1,8 @@
+apiVersion: apm/v1
+kind: Package
+metadata:
+  name: python-api-plugin
+  version: 1.2.0
+spec:
+  agents: ./agents
+  skills: ./skills

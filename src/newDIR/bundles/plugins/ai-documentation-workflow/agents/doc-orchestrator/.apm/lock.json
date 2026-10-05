@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "packages": {
+    "doc-orchestrator": {
+      "version": "2.1.0"
+    }
+  }
+}

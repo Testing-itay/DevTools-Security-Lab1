@@ -1,0 +1,8 @@
+apiVersion: apm/v1
+kind: Agent
+metadata:
+  name: doc-writer
+  version: 1.0.0
+spec:
+  runtime: agent
+  entrypoint: ./doc-writer.agent.md

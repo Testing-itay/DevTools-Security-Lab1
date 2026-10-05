@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "sds-plugin-form-builder",
+  "version": "1.0.0",
+  "description": "Builds an SDS-compliant form from a field specification.",
+  "author": {
+    "name": "Enterprise Web AI",
+    "email": "ewai@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0",
+  "entrypoint": "./sds-plugin-form-builder.agent.md"
+}
