@@ -1,3 +1,4 @@
+# Changed copy: new content gives its findings new triage ids.
 """Directory lookup helpers backed by the accounts database."""
 
 import hashlib

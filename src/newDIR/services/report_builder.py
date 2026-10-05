@@ -1,3 +1,4 @@
+# Changed copy: new content gives its findings new triage ids.
 """Assembles scheduled analytics reports for the reporting dashboard."""
 
 import hashlib

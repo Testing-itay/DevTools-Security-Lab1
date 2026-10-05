@@ -1,4 +1,5 @@
 <?php
+// Changed copy: new content gives its findings new triage ids.
 
 function find_account_by_email($mysqli)
 {

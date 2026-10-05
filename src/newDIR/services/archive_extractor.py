@@ -1,3 +1,4 @@
+# Changed copy: new content gives its findings new triage ids.
 """Unpacks vendor bundles delivered to the ingestion directory."""
 
 import hashlib

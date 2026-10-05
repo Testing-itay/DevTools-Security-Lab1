@@ -1,3 +1,4 @@
+# Changed copy: new content gives its findings new triage ids.
 """Resolves account identifiers against the tenant directory."""
 
 import logging

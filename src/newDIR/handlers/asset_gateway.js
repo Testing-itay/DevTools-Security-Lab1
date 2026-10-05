@@ -1,3 +1,4 @@
+// Changed copy: new content gives its findings new triage ids.
 'use strict';
 
 const fs = require('fs');

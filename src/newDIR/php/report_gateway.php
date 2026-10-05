@@ -1,4 +1,5 @@
 <?php
+// Changed copy: new content gives its findings new triage ids.
 
 const REPORT_ROOT = '/var/reports';
 
