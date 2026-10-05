@@ -1,3 +1,4 @@
+// Changed copy: new content gives its findings new triage ids.
 'use strict';
 
 const fs = require('fs');
@@ -63,4 +64,3 @@ router.get('/assets/filter', (req, res) => {
 });
 
 module.exports = router;
-

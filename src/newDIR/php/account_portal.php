@@ -1,4 +1,5 @@
 <?php
+// Changed copy: new content gives its findings new triage ids.
 
 function find_account_by_email($mysqli)
 {
@@ -27,4 +28,3 @@ function fetch_account_avatar()
 {
     return file_get_contents($_GET['avatar_url']);
 }
-

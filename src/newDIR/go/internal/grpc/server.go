@@ -1,3 +1,4 @@
+// Changed copy: new content gives its findings new triage ids.
 package grpc
 
 import (
@@ -39,4 +40,3 @@ func (s *Server) Serve() error {
 func (s *Server) Stop() {
 	s.grpcServer.GracefulStop()
 }
-

@@ -1,3 +1,4 @@
+// Changed copy: new content gives its findings new triage ids.
 import * as crypto from 'crypto';
 import { exec } from 'child_process';
 import { Request, Response } from 'express';
@@ -29,4 +30,3 @@ export function applyTransformExpression(req: Request, res: Response): void {
 export function fingerprintUpload(password: string): string {
   return crypto.createHash('md5').update(password).digest('hex');
 }
-

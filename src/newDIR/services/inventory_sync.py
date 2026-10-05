@@ -1,3 +1,4 @@
+# Changed copy: new content gives its findings new triage ids.
 """Synchronizes the local inventory cache against upstream warehouses."""
 
 import hashlib
@@ -40,4 +41,3 @@ def rebuild_region_index(region):
 def cache_key_for_batch(batch_body):
     """Compute the cache key for an inventory sync batch."""
     return hashlib.md5(batch_body.encode("utf-8")).hexdigest()
-

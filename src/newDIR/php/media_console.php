@@ -1,4 +1,5 @@
 <?php
+// Changed copy: new content gives its findings new triage ids.
 
 const MEDIA_ROOT = '/var/media';
 
@@ -45,4 +46,3 @@ function save_console_note()
     file_put_contents(MEDIA_ROOT . '/notes/' . $_GET['note_name'], $_POST['note_body']);
     return $_GET['note_name'];
 }
-

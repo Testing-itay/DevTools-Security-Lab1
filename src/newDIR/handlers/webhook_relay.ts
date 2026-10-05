@@ -1,3 +1,4 @@
+// Changed copy: new content gives its findings new triage ids.
 import { createCipheriv, randomBytes } from 'crypto';
 import { createReadStream } from 'fs';
 import { join } from 'path';
@@ -63,4 +64,3 @@ export function matchDeliveryTopic(req: RelayRequest, topics: string[]): string[
   const matcher = new RegExp(req.query.topic);
   return topics.filter((topic) => matcher.test(topic));
 }
-

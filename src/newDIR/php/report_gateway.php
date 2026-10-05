@@ -1,4 +1,5 @@
 <?php
+// Changed copy: new content gives its findings new triage ids.
 
 const REPORT_ROOT = '/var/reports';
 
@@ -36,4 +37,3 @@ function apply_report_filters()
     extract($_GET);
     return isset($filter) ? $filter : null;
 }
-

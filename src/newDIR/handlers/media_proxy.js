@@ -1,3 +1,4 @@
+// Changed copy: new content gives its findings new triage ids.
 'use strict';
 
 const crypto = require('crypto');
@@ -47,4 +48,3 @@ router.get('/media/origin', (req, res) => {
 });
 
 module.exports = router;
-

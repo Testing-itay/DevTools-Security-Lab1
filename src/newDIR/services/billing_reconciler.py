@@ -1,3 +1,4 @@
+# Changed copy: new content gives its findings new triage ids.
 """Reconciles billing invoices against the ledger of record."""
 
 import hashlib
@@ -45,4 +46,3 @@ def fetch_ledger_entry(entry_id):
 def fingerprint_statement(statement_body):
     """Compute a fingerprint used to deduplicate billing statements."""
     return hashlib.md5(statement_body.encode("utf-8")).hexdigest()
-

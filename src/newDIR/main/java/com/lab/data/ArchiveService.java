@@ -1,3 +1,4 @@
+// Changed copy: new content gives its findings new triage ids.
 package com.lab.data;
 
 import java.io.ByteArrayInputStream;
@@ -81,4 +82,3 @@ public class ArchiveService {
         }
     }
 }
-

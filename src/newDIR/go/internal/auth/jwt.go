@@ -1,3 +1,4 @@
+// Changed copy: new content gives its findings new triage ids.
 package auth
 
 import (
@@ -66,4 +67,3 @@ func JWTMiddleware() gin.HandlerFunc {
 		c.Next()
 	}
 }
-

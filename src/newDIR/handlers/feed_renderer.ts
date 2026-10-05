@@ -1,3 +1,4 @@
+// Changed copy: new content gives its findings new triage ids.
 import { createHash } from 'crypto';
 
 export interface FeedItem {
@@ -51,4 +52,3 @@ export function allocateRenderBuffer(size: number): Buffer {
 export function authorDigest(author: string, saltValue: string): string {
   return createHash('sha1').update(saltValue + author).digest('hex');
 }
-

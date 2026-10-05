@@ -1,3 +1,4 @@
+// Changed copy: new content gives its findings new triage ids.
 package com.lab.data;
 
 import java.beans.XMLDecoder;
@@ -101,4 +102,3 @@ public class CatalogResolver {
         return context.lookup(entryName);
     }
 }
-

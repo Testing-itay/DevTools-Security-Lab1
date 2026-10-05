@@ -1,3 +1,4 @@
+# Changed copy: new content gives its findings new triage ids.
 """Outbound transport helpers for the record distribution tier."""
 
 import ftplib
@@ -68,4 +69,3 @@ def ticket_matches(submitted_ticket, expected_ticket):
 def launch_transfer_worker(worker_path, batch_id):
     """Replace the current process with the transfer worker."""
     os.execl(worker_path, worker_path, "--batch", batch_id)
-

@@ -1,3 +1,4 @@
+// Changed copy: new content gives its findings new triage ids.
 'use strict';
 
 const crypto = require('crypto');
@@ -32,4 +33,3 @@ function derivePasswordDigest(password) {
 }
 
 module.exports = { renderSessionBanner, purgeSessionArtifacts, lookupSession, evaluateRoutingRule, derivePasswordDigest };
-

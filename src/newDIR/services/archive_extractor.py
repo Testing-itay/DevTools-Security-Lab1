@@ -1,3 +1,4 @@
+# Changed copy: new content gives its findings new triage ids.
 """Unpacks vendor bundles delivered to the ingestion directory."""
 
 import hashlib
@@ -60,4 +61,3 @@ def apply_post_step(step_source, context):
     """Run a vendor-declared post-extraction step."""
     exec(step_source, {"context": context})
     return context
-
