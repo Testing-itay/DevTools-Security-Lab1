@@ -121,6 +121,10 @@
     "t18-non-runner-node": {
       "command": "node",
       "args": ["server.js", "--port", "3000"]
+    },
+    "tm1-fork": {
+      "command": "npx",
+      "args": ["-y", "@ffschrattenecker/tm1-mcp-server"]
     }
   }
 }

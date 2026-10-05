@@ -80,6 +80,7 @@ Latest registry versions as of 30 Sep 2026.
 | `gemini-browser` | npm `@browsermcp/mcp` | 0.1.3 | resolved; `@latest` counts as unpinned |
 | `superpowers-transcripts` | npm `@kimtaeyoon83/mcp-server-youtube-transcript` | 0.1.1 | resolved, no advisory |
 | `guardian-semgrep` | npm `mcp-remote` | 0.14.3 | resolved to 0.14.3 with no finding: CVE-2025-6514 affects 0.0.5 up to, not including, 0.1.16 |
+| `tm1-fork` in `.cursor/mcp.json` | npm `@ffschrattenecker/tm1-mcp-server` | 9.2.0 | resolved to 9.2.0 by the second fetch one minute after the first: a fork created on 25 Sep 2026 that the SCA content service had never seen, so the first answer has no version |
 
 Controls:
 
