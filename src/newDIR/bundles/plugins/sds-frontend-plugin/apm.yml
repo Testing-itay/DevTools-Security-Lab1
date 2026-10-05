@@ -1,0 +1,8 @@
+apiVersion: apm/v1
+kind: Package
+metadata:
+  name: sds-frontend-plugin
+  version: 1.4.0
+spec:
+  agents: ./agents
+  skills: ./skills

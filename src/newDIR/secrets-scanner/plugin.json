@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "secrets-scanner",
+  "version": "1.4.0",
+  "description": "Pre-commit hook plugin that blocks a commit carrying a credential.",
+  "author": {
+    "name": "AppSec Guild",
+    "email": "appsec@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0",
+  "hooks": "./hooks"
+}

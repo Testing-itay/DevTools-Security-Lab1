@@ -1,0 +1,11 @@
+{
+  "type": "panel",
+  "name": "Heatmap",
+  "id": "devtools-heatmap-panel",
+  "info": {
+    "version": "2.0.0",
+    "author": {
+      "name": "DASH"
+    }
+  }
+}

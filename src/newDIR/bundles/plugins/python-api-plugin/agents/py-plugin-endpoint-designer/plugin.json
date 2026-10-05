@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
+  "name": "py-plugin-endpoint-designer",
+  "version": "1.0.0",
+  "description": "Designs a FastAPI endpoint with its schema and tests.",
+  "author": {
+    "name": "Enterprise Web AI",
+    "email": "ewai@devtools-engine.example.com"
+  },
+  "license": "Apache-2.0",
+  "entrypoint": "./py-plugin-endpoint-designer.agent.md"
+}

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Fixture hook: block a staged credential.
+set -euo pipefail
+git diff --cached -U0 | grep -Eq "(AKIA|-----BEGIN [A-Z ]*PRIVATE KEY)" && {
+  echo "credential in staged diff" >&2; exit 1
+}
+exit 0

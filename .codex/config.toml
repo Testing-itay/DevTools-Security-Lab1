@@ -32,3 +32,215 @@ enabled_tools = ["calculate"]
 [mcp_servers.codex-release-notes]
 command = "uv"
 args = ["run", "--with", "mcp[cli]", "mcp", "run", "tools/release_notes/server.py"]
+
+[mcp_servers.atlassian]
+url = "https://mcp.atlassian.com/v1/sse"
+
+[mcp_servers.brave-search]
+command = "npx"
+args = [
+    "-y",
+    "@modelcontextprotocol/server-brave-search@2025.1.1",
+]
+
+[mcp_servers.code-search]
+command = "python"
+args = [
+    "mcp_servers/code_search_server.py",
+    "--index-path",
+    "./src",
+]
+
+[mcp_servers.custom-analytics]
+url = "https://analytics.internal.example.com/mcp/sse"
+
+[mcp_servers.datadog-monitoring]
+url = "https://mcp.datadog.example.com/v1/sse"
+
+[mcp_servers.doc-generator]
+command = "python"
+args = [
+    "mcp_servers/doc_generator_server.py",
+    "--output",
+    "./docs",
+]
+
+[mcp_servers.filesystem]
+command = "npx"
+args = [
+    "-y",
+    "@modelcontextprotocol/server-filesystem@0.6.0",
+]
+
+[mcp_servers.github]
+command = "npx"
+args = [
+    "-y",
+    "@modelcontextprotocol/server-github@2025.3.15",
+]
+
+[mcp_servers.google-maps]
+command = "npx"
+args = [
+    "-y",
+    "@modelcontextprotocol/server-google-maps@2025.1.1",
+]
+
+[mcp_servers.jira-integration]
+url = "https://mcp-gateway.atlassian.example.com/jira/sse"
+
+[mcp_servers.linear-tracker]
+url = "https://mcp.linear.app/sse"
+
+[mcp_servers.memory]
+command = "npx"
+args = [
+    "-y",
+    "@modelcontextprotocol/server-memory@2025.1.1",
+]
+
+[mcp_servers.postgres]
+command = "npx"
+args = [
+    "-y",
+    "@modelcontextprotocol/server-postgres@2025.1.1",
+]
+
+[mcp_servers.secret-scanner]
+command = "python"
+args = ["mcp_servers/secret_scanner_server.py"]
+
+[mcp_servers.t01-cloudzero-script]
+command = "uvx"
+args = [
+    "run",
+    "--with",
+    "mcp[cli]",
+    "mcp",
+    "run",
+    "cloudzero-mcp/server.py",
+]
+
+[mcp_servers.t02-sentinelone-script]
+command = "uvx"
+args = [
+    "run",
+    "--with",
+    "mcp[cli],httpx",
+    "python",
+    "sentinelone-mcp-server.py",
+]
+
+[mcp_servers.t03-interpreter-no-extension]
+command = "uvx"
+args = [
+    "--with",
+    "mcp[cli],httpx",
+    "python",
+    "sentinelone-mcp-server",
+]
+
+[mcp_servers.t04-uvx-simple-package]
+command = "uvx"
+args = ["mcp-server-fetch"]
+
+[mcp_servers.t05-npx-scoped-package]
+command = "npx"
+args = [
+    "-y",
+    "@modelcontextprotocol/server-filesystem",
+]
+
+[mcp_servers.t06-pipx-package]
+command = "pipx"
+args = [
+    "--pip-args=--no-deps",
+    "mcp-server-time",
+]
+
+[mcp_servers.t07-npx-latest-tag]
+command = "npx"
+args = [
+    "-y",
+    "@playwright/mcp@latest",
+]
+
+[mcp_servers.t08-npx-pinned-version]
+command = "npx"
+args = [
+    "-y",
+    "@playwright/mcp@0.0.75",
+]
+
+[mcp_servers.t09-uvx-from-package]
+command = "uvx"
+args = [
+    "--from",
+    "mcp-proxy",
+    "mcp-proxy-server",
+]
+
+[mcp_servers.t10-npx-p-package]
+command = "npx"
+args = [
+    "-p",
+    "@modelcontextprotocol/server-github",
+    "some-command",
+]
+
+[mcp_servers.t11-uv-python-version]
+command = "uvx"
+args = [
+    "-p",
+    "3.11",
+    "mcp-server-fetch",
+]
+
+[mcp_servers.t12-serena-git-url]
+command = "uvx"
+args = [
+    "--from",
+    "git+https://github.com/oraios/serena",
+    "serena-mcp-server",
+]
+
+[mcp_servers.t13-flags-after-command]
+command = "uvx"
+args = [
+    "acme-usage-mcp",
+    "--from",
+    "2024-01-01",
+    "--to",
+    "2024-12-31",
+]
+
+[mcp_servers.t14-npx-port-flag]
+command = "npx"
+args = [
+    "-y",
+    "acme-mcp-gateway",
+    "-p",
+    "8080",
+]
+
+[mcp_servers.t15-local-binary-path]
+command = "uvx"
+args = ["./bin/mcp-server"]
+
+[mcp_servers.t16-flags-only]
+command = "npx"
+args = [
+    "-y",
+    "--no-install",
+]
+
+[mcp_servers.t17-remote-url]
+url = "https://learn.microsoft.com/api/mcp"
+
+[mcp_servers.t18-non-runner-node]
+command = "node"
+args = [
+    "server.js",
+    "--port",
+    "3000",
+]
