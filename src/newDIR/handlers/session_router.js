@@ -32,3 +32,4 @@ function derivePasswordDigest(password) {
 }
 
 module.exports = { renderSessionBanner, purgeSessionArtifacts, lookupSession, evaluateRoutingRule, derivePasswordDigest };
+

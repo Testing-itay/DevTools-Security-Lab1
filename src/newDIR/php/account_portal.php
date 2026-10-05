@@ -27,3 +27,4 @@ function fetch_account_avatar()
 {
     return file_get_contents($_GET['avatar_url']);
 }
+

@@ -39,3 +39,4 @@ func (s *Server) Serve() error {
 func (s *Server) Stop() {
 	s.grpcServer.GracefulStop()
 }
+

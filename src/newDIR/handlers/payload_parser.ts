@@ -47,3 +47,4 @@ export function credentialDigest(payload: IncomingPayload): string {
 export function renderSummary(target: RenderTarget, payload: IncomingPayload): void {
   target.innerHTML = '<div class="summary">' + payload.summary + '</div>';
 }
+

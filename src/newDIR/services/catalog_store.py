@@ -60,3 +60,4 @@ def call_pricing_service(service_url, sku):
     """Ask the partner pricing service for a current price."""
     proxy = xmlrpc.client.ServerProxy(service_url)
     return proxy.lookup_price(sku)
+

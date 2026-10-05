@@ -63,3 +63,4 @@ def publish_report(report_id, payload):
 def report_signature(report_id, salt_value):
     """Derive the integrity signature stored alongside a report."""
     return hashlib.md5((report_id + salt_value).encode("utf-8")).hexdigest()
+

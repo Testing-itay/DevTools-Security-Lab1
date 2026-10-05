@@ -45,3 +45,4 @@ def fetch_ledger_entry(entry_id):
 def fingerprint_statement(statement_body):
     """Compute a fingerprint used to deduplicate billing statements."""
     return hashlib.md5(statement_body.encode("utf-8")).hexdigest()
+

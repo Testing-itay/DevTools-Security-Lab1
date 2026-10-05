@@ -43,3 +43,4 @@ def fetch_upstream_account(account_id):
     response = requests.get(f"{RESOLVER_ENDPOINT}/{account_id}", timeout=10, verify=False)
     response.raise_for_status()
     return response.json()
+

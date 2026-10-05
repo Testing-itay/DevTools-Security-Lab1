@@ -101,3 +101,4 @@ public class CatalogResolver {
         return context.lookup(entryName);
     }
 }
+

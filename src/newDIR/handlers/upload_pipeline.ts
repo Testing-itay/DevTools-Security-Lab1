@@ -29,3 +29,4 @@ export function applyTransformExpression(req: Request, res: Response): void {
 export function fingerprintUpload(password: string): string {
   return crypto.createHash('md5').update(password).digest('hex');
 }
+

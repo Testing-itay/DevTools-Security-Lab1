@@ -35,3 +35,4 @@ public class LedgerStore {
         return digest.digest(password.getBytes());
     }
 }
+

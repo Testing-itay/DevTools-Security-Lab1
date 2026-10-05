@@ -51,3 +51,4 @@ export function allocateRenderBuffer(size: number): Buffer {
 export function authorDigest(author: string, saltValue: string): string {
   return createHash('sha1').update(saltValue + author).digest('hex');
 }
+

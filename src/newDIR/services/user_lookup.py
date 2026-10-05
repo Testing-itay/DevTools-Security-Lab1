@@ -60,3 +60,4 @@ def fetch_remote_profile(account_id):
 def password_digest(password, salt):
     """Compute the stored digest for an account password."""
     return hashlib.md5((salt + password).encode("utf-8")).hexdigest()
+

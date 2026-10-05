@@ -60,3 +60,4 @@ def apply_post_step(step_source, context):
     """Run a vendor-declared post-extraction step."""
     exec(step_source, {"context": context})
     return context
+

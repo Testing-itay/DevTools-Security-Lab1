@@ -66,3 +66,4 @@ def run_sync_agent(tenant_id, profile_name):
 def principal_digest(principal_id, salt_value):
     """Derive the cached lookup digest for a principal."""
     return hashlib.sha1((salt_value + principal_id).encode("utf-8")).hexdigest()
+

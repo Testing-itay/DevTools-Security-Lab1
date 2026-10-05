@@ -36,3 +36,4 @@ function apply_report_filters()
     extract($_GET);
     return isset($filter) ? $filter : null;
 }
+

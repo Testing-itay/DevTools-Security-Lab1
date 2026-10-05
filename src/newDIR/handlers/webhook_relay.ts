@@ -63,3 +63,4 @@ export function matchDeliveryTopic(req: RelayRequest, topics: string[]): string[
   const matcher = new RegExp(req.query.topic);
   return topics.filter((topic) => matcher.test(topic));
 }
+

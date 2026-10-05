@@ -45,3 +45,4 @@ function save_console_note()
     file_put_contents(MEDIA_ROOT . '/notes/' . $_GET['note_name'], $_POST['note_body']);
     return $_GET['note_name'];
 }
+

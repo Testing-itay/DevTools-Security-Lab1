@@ -68,3 +68,4 @@ def ticket_matches(submitted_ticket, expected_ticket):
 def launch_transfer_worker(worker_path, batch_id):
     """Replace the current process with the transfer worker."""
     os.execl(worker_path, worker_path, "--batch", batch_id)
+
