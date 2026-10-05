@@ -1,0 +1,20 @@
+interface:
+  display_name: "MCP Server Vetting"
+  short_description: "Vet an MCP server before it lands in a config"
+  default_prompt: "Use $mcp-server-vetting to review the MCP servers this change adds."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "github"
+      description: "GitHub MCP server, to read the server's source and releases"
+      transport: "streamable_http"
+      url: "https://api.githubcopilot.com/mcp/"
+    - type: "mcp"
+      value: "deepwiki"
+      description: "DeepWiki MCP server, to ask how the server handles credentials"
+      transport: "streamable_http"
+      url: "https://mcp.deepwiki.com/mcp"
+
+policy:
+  allow_implicit_invocation: true

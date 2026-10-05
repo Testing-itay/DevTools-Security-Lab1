@@ -1,0 +1,27 @@
+{
+  "ui": {
+    "theme": "GitHub"
+  },
+  "context": {
+    "fileName": ["GEMINI.md", "AGENTS.md"]
+  },
+  "mcp": {
+    "allowed": ["gemini-deepwiki", "gemini-atlassian", "gemini-browser"]
+  },
+  "mcpServers": {
+    "gemini-deepwiki": {
+      "httpUrl": "https://mcp.deepwiki.com/mcp",
+      "timeout": 30000
+    },
+    "gemini-atlassian": {
+      "url": "https://mcp.atlassian.com/v1/sse"
+    },
+    "gemini-browser": {
+      "command": "npx",
+      "args": ["-y", "@browsermcp/mcp@latest"],
+      "cwd": ".",
+      "trust": false,
+      "includeTools": ["browser_navigate", "browser_snapshot"]
+    }
+  }
+}

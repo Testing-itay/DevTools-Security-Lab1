@@ -1,0 +1,7 @@
+[mcp_servers.api-mysql]
+command = "npx"
+args = ["-y", "@benborla29/mcp-server-mysql@2.0.9"]
+
+[mcp_servers.api-mysql.env]
+MYSQL_HOST = "127.0.0.1"
+MYSQL_DB = "devtools_api"

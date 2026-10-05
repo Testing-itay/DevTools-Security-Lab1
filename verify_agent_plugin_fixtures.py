@@ -248,6 +248,7 @@ EXPECT_OWNER = {
     "skills/checkout/optimization-triage/SKILL.md": "optimization-triage",
     "skills/get-prices/SKILL.md": "get-prices",
     ".agents/skills/anomaly-review/SKILL.md": "spend-control",
+    ".agents/skills/mcp-server-vetting/SKILL.md": "spend-control",
 }
 
 

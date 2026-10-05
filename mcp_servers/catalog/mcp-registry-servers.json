@@ -1,0 +1,53 @@
+{
+  "servers": [
+    {
+      "server": {
+        "name": "io.github.modelcontextprotocol/filesystem",
+        "description": "Secure file operations with configurable access controls.",
+        "version": "2026.8.31",
+        "repository": {
+          "url": "https://github.com/modelcontextprotocol/servers",
+          "source": "github"
+        },
+        "packages": [
+          {
+            "registryType": "npm",
+            "identifier": "@modelcontextprotocol/server-filesystem",
+            "version": "2026.8.31",
+            "transport": {
+              "type": "stdio"
+            }
+          }
+        ]
+      },
+      "_meta": {
+        "io.modelcontextprotocol.registry/official": {
+          "status": "active",
+          "isLatest": true
+        }
+      }
+    },
+    {
+      "server": {
+        "name": "io.github.upstash/context7",
+        "description": "Up-to-date library documentation for prompts.",
+        "version": "4.1.1",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://mcp.context7.com/mcp"
+          }
+        ]
+      },
+      "_meta": {
+        "io.modelcontextprotocol.registry/official": {
+          "status": "active",
+          "isLatest": true
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "count": 2
+  }
+}

@@ -15,5 +15,20 @@
   "agents": "./agents",
   "skills": "./skills",
   "commands": "./commands",
-  "mcpServers": "./.mcp.json"
+  "mcpServers": [
+    "./.mcp.json",
+    {
+      "guardian-semgrep": {
+        "command": "npx",
+        "args": ["-y", "mcp-remote", "https://mcp.semgrep.ai/mcp"]
+      },
+      "guardian-taint-index": {
+        "command": "python",
+        "args": ["${CLAUDE_PLUGIN_ROOT}/servers/taint_index.py", "--stdio"],
+        "env": {
+          "TAINT_INDEX_CACHE": "${CLAUDE_PLUGIN_ROOT}/.cache"
+        }
+      }
+    }
+  ]
 }

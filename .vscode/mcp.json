@@ -1,0 +1,34 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "github_token",
+      "description": "GitHub personal access token",
+      "password": true
+    }
+  ],
+  "servers": {
+    "vscode-github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${input:github_token}"
+      }
+    },
+    "vscode-deepwiki": {
+      "type": "sse",
+      "url": "https://mcp.deepwiki.com/sse"
+    },
+    "vscode-database": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@executeautomation/database-server", "${workspaceFolder}/data/devtools.sqlite"],
+      "envFile": "${workspaceFolder}/.env"
+    },
+    "vscode-git-pinned": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["mcp-server-git@2026.8.18", "--repository", "${workspaceFolder}"]
+    }
+  }
+}
