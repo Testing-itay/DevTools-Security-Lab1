@@ -1,0 +1,13 @@
+{
+  "name": "infra-guard",
+  "version": "1.0.0",
+  "description": "Review Terraform plans and block risky infrastructure changes.",
+  "author": {
+    "name": "Platform",
+    "email": "platform@devtools-engine.example.com"
+  },
+  "license": "MIT",
+  "skills": "./skills",
+  "commands": "./commands",
+  "mcpServers": "./.mcp.json"
+}
