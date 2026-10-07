@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "terraform": {
+      "command": "npx",
+      "args": ["-y", "terraform-mcp-server@0.2.1"]
+    }
+  }
+}
