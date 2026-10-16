@@ -1,5 +1,6 @@
 
 
+
 """MCP Server: Risk Scorer — Calculate security risk scores for code changes."""
 import argparse
 import json

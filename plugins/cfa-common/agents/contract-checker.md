@@ -1,5 +1,6 @@
 
 
+
 ---
 name: contract-checker
 description: Checks a change against the shared CFA service contract.

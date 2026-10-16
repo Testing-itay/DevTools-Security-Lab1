@@ -1,5 +1,6 @@
 
 
+
 """Prometheus metrics for application observability."""
 
 from prometheus_client import Counter, Histogram, Gauge, generate_latest

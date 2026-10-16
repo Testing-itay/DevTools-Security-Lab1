@@ -1,5 +1,6 @@
 
 
+
 # useLandmark
 
 Provides landmark navigation in an application. Call this with a role and label to register a landmark navigable with F6.

@@ -1,5 +1,6 @@
 
 
+
 import mongoose from 'mongoose';
 import type { Agent, AgentConfig } from '../types';
 

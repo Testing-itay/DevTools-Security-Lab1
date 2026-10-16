@@ -1,5 +1,6 @@
 
 
+
 # CONTEXT.md Format
 
 ## Structure

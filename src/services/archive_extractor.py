@@ -1,5 +1,6 @@
 
 
+
 """Unpacks vendor bundles delivered to the ingestion directory."""
 
 import hashlib

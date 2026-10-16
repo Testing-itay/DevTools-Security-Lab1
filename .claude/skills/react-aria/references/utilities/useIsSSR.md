@@ -1,5 +1,6 @@
 
 
+
 # useIsSSR
 
 Returns whether the component is currently being server side rendered or

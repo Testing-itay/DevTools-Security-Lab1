@@ -1,5 +1,6 @@
 
 
+
 # Agents
 
 - `budget-guard` blocks a change that raises projected monthly spend.

@@ -1,5 +1,6 @@
 
 
+
 ---
 name: Registry Lookup
 description: Look up a CFA component and its owning team.

@@ -1,5 +1,6 @@
 
 
+
 """MCP Server: Secret Scanner — Detect exposed credentials in source code."""
 import json
 import re

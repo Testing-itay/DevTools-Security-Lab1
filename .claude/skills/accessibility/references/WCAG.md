@@ -1,5 +1,6 @@
 
 
+
 # WCAG 2.2 Quick Reference
 
 ## Success criteria by level

@@ -1,5 +1,6 @@
 
 
+
 """MCP Server: Dependency Analyzer — Analyze project dependencies and detect issues."""
 import argparse
 import json

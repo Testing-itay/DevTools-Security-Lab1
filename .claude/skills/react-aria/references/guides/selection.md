@@ -1,5 +1,6 @@
 
 
+
 # Selection
 
 Many collection components support selecting items by clicking or tapping them, or by using the keyboard. Learn how to handle selection events, how to control selection programmatically, and the data structures used to represent a selection.

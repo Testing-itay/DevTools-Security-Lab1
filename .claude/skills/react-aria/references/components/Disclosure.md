@@ -1,5 +1,6 @@
 
 
+
 # Disclosure
 
 A disclosure is a collapsible section of content. It is composed of a a header with a heading and trigger button, and a panel that contains the content.

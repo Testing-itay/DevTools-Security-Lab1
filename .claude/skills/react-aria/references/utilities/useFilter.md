@@ -1,5 +1,6 @@
 
 
+
 # useFilter
 
 Provides localized string search functionality that is useful for filtering or matching items

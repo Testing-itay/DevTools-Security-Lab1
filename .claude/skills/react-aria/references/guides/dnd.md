@@ -1,5 +1,6 @@
 
 
+
 # Drag and Drop
 
 React Aria collection components support drag and drop with mouse and touch interactions, and full keyboard and screen reader accessibility. Learn how to provide drag data and handle drop events to move, insert, or reorder items.

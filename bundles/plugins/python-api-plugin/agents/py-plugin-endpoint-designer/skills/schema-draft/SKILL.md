@@ -1,5 +1,6 @@
 
 
+
 ---
 name: Schema Draft
 description: Draft a request and response schema for a new endpoint.

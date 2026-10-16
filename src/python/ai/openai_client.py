@@ -1,5 +1,6 @@
 
 
+
 """OpenAI client wrapper for chat completions and embeddings."""
 
 from typing import Optional

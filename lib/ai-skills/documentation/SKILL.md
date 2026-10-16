@@ -1,5 +1,6 @@
 
 
+
 ---
 name: Documentation Generator
 description: Generate comprehensive documentation from source code including API docs and architecture guides.

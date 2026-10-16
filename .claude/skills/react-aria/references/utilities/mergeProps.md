@@ -1,5 +1,6 @@
 
 
+
 # mergeProps
 
 Merges multiple props objects together. Event handlers are chained,

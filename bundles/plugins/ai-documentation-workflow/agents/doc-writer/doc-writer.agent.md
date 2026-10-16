@@ -1,5 +1,6 @@
 
 
+
 ---
 name: doc-writer
 description: Writes a service document from its code and its ADRs.

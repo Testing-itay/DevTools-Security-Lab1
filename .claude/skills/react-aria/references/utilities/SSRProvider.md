@@ -1,5 +1,6 @@
 
 
+
 # SSRProvider
 
 When using SSR with React Aria in React 16 or 17, applications must be wrapped in an SSRProvider.

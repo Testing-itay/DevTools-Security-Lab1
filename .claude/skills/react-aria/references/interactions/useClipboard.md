@@ -1,5 +1,6 @@
 
 
+
 # useClipboard
 
 Handles clipboard interactions for a focusable element. Supports items of multiple

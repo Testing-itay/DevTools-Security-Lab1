@@ -1,5 +1,6 @@
 
 
+
 ---
 name: mcp-server-vetting
 description: Vet an MCP server before a change adds it to .vscode/mcp.json, .codex/config.toml, .gemini/settings.json or a plugin manifest. Use when a diff adds, removes or re-points an MCP server entry.

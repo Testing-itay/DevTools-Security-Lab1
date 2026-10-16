@@ -1,5 +1,6 @@
 
 
+
 interface:
   display_name: "MCP Server Vetting"
   short_description: "Vet an MCP server before it lands in a config"
