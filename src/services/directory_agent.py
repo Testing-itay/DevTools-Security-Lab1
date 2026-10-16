@@ -1,3 +1,4 @@
+
 """Synchronises tenant directory state with the upstream identity service."""
 
 import hashlib

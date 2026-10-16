@@ -1,3 +1,4 @@
+
 """Assembles scheduled analytics reports for the reporting dashboard."""
 
 import hashlib

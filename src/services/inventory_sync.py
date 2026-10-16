@@ -1,3 +1,4 @@
+
 """Synchronizes the local inventory cache against upstream warehouses."""
 
 import hashlib

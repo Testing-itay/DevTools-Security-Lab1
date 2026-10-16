@@ -1,3 +1,4 @@
+
 ---
 description: Scan the working-tree diff for injection sinks
 ---

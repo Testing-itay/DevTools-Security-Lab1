@@ -1,3 +1,4 @@
+
 """OpenTelemetry tracing configuration."""
 
 from opentelemetry import trace

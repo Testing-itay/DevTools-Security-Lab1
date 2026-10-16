@@ -1,3 +1,4 @@
+
 # Agent plugin fixtures
 
 Real-shape fixtures for the agent-plugin detection surfaces (LIM-44969).

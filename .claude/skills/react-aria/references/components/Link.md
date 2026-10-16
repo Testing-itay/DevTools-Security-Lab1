@@ -1,3 +1,4 @@
+
 # Link
 
 A link allows a user to navigate to another page or resource within a web page

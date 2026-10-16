@@ -1,3 +1,4 @@
+
 # Common Patterns and Integration
 
 ## Application Logger Setup

@@ -1,3 +1,4 @@
+
 """Resolves account identifiers against the tenant directory."""
 
 import logging

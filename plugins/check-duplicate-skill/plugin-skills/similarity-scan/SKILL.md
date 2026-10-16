@@ -1,3 +1,4 @@
+
 ---
 name: Similarity Scan
 description: Score two skill descriptions for overlap.

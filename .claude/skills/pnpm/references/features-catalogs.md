@@ -1,3 +1,4 @@
+
 ---
 name: pnpm-catalogs
 description: Centralized dependency version management for workspaces

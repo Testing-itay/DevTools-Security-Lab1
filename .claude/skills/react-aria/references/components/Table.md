@@ -1,3 +1,4 @@
+
 # Table
 
 A table displays data in rows and columns and enables a user to navigate its contents via directional navigation keys,

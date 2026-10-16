@@ -1,3 +1,4 @@
+
 """FastAPI application with Prometheus metrics and Sentry integration."""
 
 from contextlib import asynccontextmanager

@@ -1,3 +1,4 @@
+
 [mcpServers.redis]
 command = "npx"
 args = ["-y", "@modelcontextprotocol/server-redis@2025.1.1"]

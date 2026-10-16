@@ -1,3 +1,4 @@
+
 """Health check endpoints."""
 
 from fastapi import APIRouter

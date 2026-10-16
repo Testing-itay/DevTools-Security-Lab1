@@ -1,3 +1,4 @@
+
 {
   "$schema": "https://agent-plugins.org/schema/1.0.0/plugin.json",
   "name": "sds-frontend-plugin",

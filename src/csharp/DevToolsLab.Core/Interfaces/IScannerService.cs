@@ -1,3 +1,4 @@
+
 namespace DevToolsLab.Core.Interfaces;
 
 public interface IScannerService

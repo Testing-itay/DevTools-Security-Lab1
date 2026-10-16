@@ -1,3 +1,4 @@
+
 # SearchField
 
 A search field allows a user to enter and clear a search query.

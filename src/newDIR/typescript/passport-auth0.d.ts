@@ -1,3 +1,4 @@
+
 declare module 'passport-auth0' {
   export class Strategy {
     constructor(

@@ -1,3 +1,4 @@
+
 # Codex AI exclusion patterns
 node_modules/
 __pycache__/

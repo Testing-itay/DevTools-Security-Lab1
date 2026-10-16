@@ -1,3 +1,4 @@
+
 package com.devtools.messaging;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

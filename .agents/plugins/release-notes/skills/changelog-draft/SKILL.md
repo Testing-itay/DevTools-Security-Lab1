@@ -1,3 +1,4 @@
+
 ---
 name: changelog-draft
 description: Draft a changelog entry from the PRs merged since the last tag. Use when preparing a release.

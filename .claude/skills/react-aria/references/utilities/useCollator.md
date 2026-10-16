@@ -1,3 +1,4 @@
+
 # useCollator
 
 Provides localized string collation for the current locale. Automatically updates when the locale changes,

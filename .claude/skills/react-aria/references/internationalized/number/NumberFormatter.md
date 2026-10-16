@@ -1,3 +1,4 @@
+
 # NumberFormatter
 
 A wrapper around Intl.NumberFormat providing additional options, polyfills, and caching for performance.

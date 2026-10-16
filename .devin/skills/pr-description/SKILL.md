@@ -1,3 +1,4 @@
+
 ---
 name: pr-description
 description: Write a pull request description from the branch diff. Use when opening a PR or when a reviewer asks for a clearer summary.

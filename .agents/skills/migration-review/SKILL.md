@@ -1,3 +1,4 @@
+
 ---
 name: migration-review
 description: Review a database migration before it merges. Use when a diff adds or changes a migration file.
