@@ -1,4 +1,5 @@
 
+
 """MongoDB client and CRUD operations."""
 
 from typing import Optional

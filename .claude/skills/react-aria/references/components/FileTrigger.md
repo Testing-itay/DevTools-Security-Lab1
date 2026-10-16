@@ -1,4 +1,5 @@
 
+
 # FileTrigger
 
 A FileTrigger allows a user to access the file system with any pressable React Aria or React Spectrum component, or custom components built with usePress.

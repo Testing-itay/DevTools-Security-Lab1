@@ -1,4 +1,5 @@
 
+
 ---
 name: Refactoring Assistant
 description: Suggest and apply code refactoring patterns to improve code quality.

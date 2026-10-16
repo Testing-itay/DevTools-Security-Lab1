@@ -1,4 +1,5 @@
 
+
 # Separator
 
 A separator is a visual divider between two groups of content, e.g. groups of menu items or sections of a page.

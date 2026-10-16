@@ -1,4 +1,5 @@
 
+
 ---
 name: dependency-bump
 description: Bump one dependency to a newer version safely. Use when asked to upgrade a package or to fix a dependency advisory.

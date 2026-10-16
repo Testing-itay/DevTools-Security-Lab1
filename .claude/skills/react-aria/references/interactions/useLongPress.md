@@ -1,4 +1,5 @@
 
+
 # useLongPress
 
 Handles long press interactions across mouse and touch devices. Supports a customizable time threshold,

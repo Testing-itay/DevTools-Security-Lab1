@@ -1,4 +1,5 @@
 
+
 # Slider
 
 A slider allows a user to select one or more values within a range.

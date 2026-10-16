@@ -1,4 +1,5 @@
 
+
 ---
 name: Schema Diff
 description: Diff two catalogue schema versions and list breaking changes.

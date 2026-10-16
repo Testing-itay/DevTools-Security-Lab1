@@ -1,4 +1,5 @@
 
+
 """MCP Server: Documentation Generator — Generate docs from source code."""
 import argparse
 import ast

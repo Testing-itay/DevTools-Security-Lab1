@@ -1,4 +1,5 @@
 
+
 /**
  * MCP Server: Migration Helper — Assist with database and schema migrations.
  */

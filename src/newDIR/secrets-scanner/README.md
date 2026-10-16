@@ -1,4 +1,5 @@
 
+
 # secrets-scanner
 
 Carries `hooks/` and no Grafana marker, so the guarded

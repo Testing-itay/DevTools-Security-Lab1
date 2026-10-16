@@ -1,4 +1,5 @@
 
+
 # useLocale
 
 Returns the current locale and layout direction.

@@ -1,4 +1,5 @@
 
+
 SERVICE_NAME = "record-service"
 SERVICE_VERSION = "0.1.0"
 

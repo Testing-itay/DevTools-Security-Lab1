@@ -1,4 +1,5 @@
 
+
 """MCP Server: Code Search — Semantic search over project files."""
 import argparse
 import json

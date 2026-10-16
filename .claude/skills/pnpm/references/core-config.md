@@ -1,4 +1,5 @@
 
+
 ---
 name: pnpm-configuration
 description: Configuration options via pnpm-workspace.yaml and .npmrc settings

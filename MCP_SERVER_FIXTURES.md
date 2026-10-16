@@ -1,4 +1,5 @@
 
+
 # MCP server fixtures
 
 Real-shape MCP client configs for MCP server discovery (LIM-46325), and unpinned

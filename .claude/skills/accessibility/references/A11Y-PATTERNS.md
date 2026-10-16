@@ -1,4 +1,5 @@
 
+
 # Accessibility Code Patterns
 
 Practical, copy-paste-ready patterns for common accessibility requirements. Each pattern is self-contained and linked from the main [SKILL.md](../SKILL.md).

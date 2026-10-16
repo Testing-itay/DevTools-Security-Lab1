@@ -1,4 +1,5 @@
 
+
 # ColorSwatch
 
 A ColorSwatch displays a preview of a selected color.

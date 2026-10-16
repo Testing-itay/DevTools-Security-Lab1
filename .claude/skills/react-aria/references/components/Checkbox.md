@@ -1,4 +1,5 @@
 
+
 # Checkbox
 
 A checkbox allows a user to select multiple items from a list of individual items, or

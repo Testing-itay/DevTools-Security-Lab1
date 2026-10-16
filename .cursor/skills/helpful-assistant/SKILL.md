@@ -1,4 +1,5 @@
 
+
 ---
 name: Helpful Assistant
 description: General purpose coding helper for everyday development tasks
